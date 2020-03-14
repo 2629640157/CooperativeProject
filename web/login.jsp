@@ -17,7 +17,7 @@
 
         BODY {
             MARGIN: 0px;
-            background-image: url(ny/IMAGE/l_bg.jpg);
+            background-image: url(ny/image/l_bg.jpg);
             background-repeat: repeat-x;
         }
 
@@ -34,7 +34,7 @@
             BORDER-RIGHT: #8b8c8d 1px dashed
         }
     </STYLE>
-    <LINK rel=stylesheet type=text/css href="ny/css/index.css">
+    <LINK rel=stylesheet type=text/css href="ny/css/INDEX.css">
     <style type="text/css">
         <!--
         .STYLE1 {
@@ -50,7 +50,7 @@
 <TABLE cellSpacing=0 cellPadding=0 width=1001 align=center height=595>
 
     <TR>
-        <TD background="ny/IMAGE/ov2.jpg">
+        <TD background="ny/image/ov2.jpg">
             <TABLE width=650 height="378" border="0"
                    align=center
                    cellPadding=0 cellSpacing=0>

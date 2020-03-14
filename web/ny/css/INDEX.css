@@ -1,5 +1,5 @@
 .body_left {
-	background-IMAGE: url(../IMAGE/space_bodybg.gif);
+	background-IMAGE: url(../image/space_bodybg.gif);
 }
 
 body {
@@ -115,7 +115,7 @@ a:hover {
 .button {
 	font-size: 14px;
 	color: #FFFFFF;
-	background-IMAGE: url(../IMAGE/button_bg.gif);
+	background-IMAGE: url(../image/button_bg.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	height: 24px;
@@ -159,7 +159,7 @@ a:hover {
 	line-height: 23px;
 	color: #333333;
 	background-attachment: fixed;
-	background-IMAGE: url(../IMAGE/Column_redbutton.gif);
+	background-IMAGE: url(../image/Column_redbutton.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	height: 23px;
@@ -170,7 +170,7 @@ a:hover {
 	line-height: 23px;
 	color: #333333;
 	background-attachment: fixed;
-	background-IMAGE: url(../IMAGE/Column_pluebutton.gif);
+	background-IMAGE: url(../image/Column_pluebutton.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	height: 23px;
@@ -180,7 +180,7 @@ a:hover {
 	font-size: 12px;
 	line-height: 23px;
 	color: #333333;
-	background-IMAGE: url(../IMAGE/Column_bluebutton.gif);
+	background-IMAGE: url(../image/Column_bluebutton.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	height: 23px;
@@ -191,7 +191,7 @@ a:hover {
 	line-height: 23px;
 	color: #333333;
 	background-attachment: fixed;
-	background-IMAGE: url(../IMAGE/Column_bluebutton_two.gif);
+	background-IMAGE: url(../image/Column_bluebutton_two.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	height: 23px;
@@ -202,7 +202,7 @@ a:hover {
 	line-height: 23px;
 	color: #333333;
 	background-attachment: fixed;
-	background-IMAGE: url(../IMAGE/Column_greenbutton.gif);
+	background-IMAGE: url(../image/Column_greenbutton.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	height: 23px;
@@ -213,7 +213,7 @@ a:hover {
 	line-height: 23px;
 	color: #333333;
 	background-attachment: fixed;
-	background-IMAGE: url(../IMAGE/Column_greenbutton_two.gif);
+	background-IMAGE: url(../image/Column_greenbutton_two.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	height: 23px;
@@ -269,7 +269,7 @@ a:hover {
 	color: #000000;
 	cursor: hand;
 	background-attachment: fixed;
-	background-IMAGE: url(../IMAGE/in_menu.gif);
+	background-IMAGE: url(../image/in_menu.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	height: 21px;
@@ -291,7 +291,7 @@ a:hover {
 	border-right-color: #b6c9d7;
 	border-bottom-color: #b6c9d7;
 	border-left-color: #b6c9d7;
-	background-image: url(../IMAGE/ghg.jpg);
+	background-image: url(../image/ghg.jpg);
 	background-repeat: repeat-x;
 }
 
@@ -324,7 +324,7 @@ a:hover {
 }
 
 .button_new {
-	background: url(../IMAGE/button_newbg.jpg);
+	background: url(../image/button_newbg.jpg);
 	background-repeat: no-repeat;
 	font-size: 12px;
 	line-height: 22px;
@@ -337,7 +337,7 @@ a:hover {
 
 .buttonnew_six {
 	background-attachment: fixed;
-	background: url(../IMAGE/sixbutton_newbg.gif);
+	background: url(../image/sixbutton_newbg.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	font-size: 12px;
@@ -351,7 +351,7 @@ a:hover {
 
 .buttonnew_eight{
 	background-attachment: fixed;
-	background-IMAGE: url(../IMAGE/eightbutton_newbg.gif);
+	background-IMAGE: url(../image/eightbutton_newbg.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	font-size: 12px;
@@ -364,7 +364,7 @@ a:hover {
 }
 
 .button_six {
-	background-IMAGE: url(../IMAGE/button_newbg.gif);
+	background-IMAGE: url(../image/button_newbg.gif);
 	background-repeat: no-repeat;
 	font-size: 12px;
 	line-height: 18px;
@@ -380,7 +380,7 @@ a:hover {
 	font-size: 12px;
 	line-height: 29px;
 	color: #333333;
-	background-image: url(../IMAGE/tdtitle_bg.jpg);
+	background-image: url(../image/tdtitle_bg.jpg);
 	background-repeat: repeat-x;
 	background-position: left top;
 	font-weight: bold;
@@ -406,7 +406,7 @@ a:hover {
 	line-height: 17px;
 	color: #666666;
 	background-attachment: fixed;
-	background-IMAGE: url(../IMAGE/chang_buttonbg.gif);
+	background-IMAGE: url(../image/chang_buttonbg.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	height: 17px;
@@ -472,7 +472,7 @@ a:hover {
 	font-size: 12px;
 	line-height: 19px;
 	background-attachment: fixed;
-	background-IMAGE: url(../IMAGE/tool_01.gif);
+	background-IMAGE: url(../image/tool_01.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	height: 19px;
@@ -521,7 +521,7 @@ a:hover {
 	color: #000000;
 	height: 21px;
 	width: 52px;
-	background-IMAGE: url(../IMAGE/bg_03.gif);
+	background-IMAGE: url(../image/bg_03.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	cursor: hand;
@@ -532,7 +532,7 @@ a:hover {
 	color: #000000;
 	height: 21px;
 	width: 52px;
-	background-IMAGE: url(../IMAGE/bg_04.gif);
+	background-IMAGE: url(../image/bg_04.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
 	cursor: hand;
@@ -561,7 +561,7 @@ a:hover {
 .rj_button {
 	font-size: 12px;
 	color: #000000;
-	background-IMAGE: url(../IMAGE/rj_bg1.gif);
+	background-IMAGE: url(../image/rj_bg1.gif);
 	line-height: 20px;
 	height: 22px;
 	width: 50px;
@@ -571,7 +571,7 @@ a:hover {
 .rj_button2 {
 	font-size: 12px;
 	color: #FF0000;
-	background-IMAGE: url(../IMAGE/rj_bg2.gif);
+	background-IMAGE: url(../image/rj_bg2.gif);
 	line-height: 20px;
 	height: 22px;
 	width: 50px;

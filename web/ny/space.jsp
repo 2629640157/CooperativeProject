@@ -20,13 +20,13 @@
 		}
 </script>
 
-<link href="../../css/INDEX.css" rel="stylesheet" type="text/css">
+<link href="css/INDEX.css" rel="stylesheet" type="text/css">
 </head>
 
 <body class="body_left">
 <table width="27" height="32"  border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="27"><img src="../image/space_img.gif" width="27" height="32" onclick="doTreeMenuFrameHandle()" style="cursor:hand" title="隐藏菜单"></td>
+    <td width="27"><img src="image/space_img.gif" width="27" height="32" onclick="doTreeMenuFrameHandle()" style="cursor:hand" title="隐藏菜单"></td>
   </tr>
 </table><p>&nbsp;</p>
 <p>&nbsp;</p>

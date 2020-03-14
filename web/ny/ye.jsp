@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link href="css/index.css" rel="stylesheet" type="text/css">
+<link href="css/INDEX.css" rel="stylesheet" type="text/css">
 <link href="css/button.css" rel="stylesheet" type="text/css">
 <html>
 <style type="text/css">

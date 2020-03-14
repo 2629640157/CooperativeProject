@@ -28,7 +28,7 @@ function bian(p1) {
 <table width="100%" height="29"  border="0" cellpadding="0" cellspacing="0" background="image/menu_bg.jpg">
  <form name="form1" method="post" action="">
   <tr>
-    <td width="9" align="left"><img src="IMAGE/memu_zbg.jpg" width="9" height="29"></td>
+    <td width="9" align="left"><img src="image/memu_zbg.jpg" width="9" height="29"></td>
     <td align="center">
 	<table  border="0" align="left" cellpadding="0" cellspacing="0" onClick="test(this)">
            <tr align="left"> 
@@ -49,7 +49,7 @@ function bian(p1) {
                     </td>        
            </tr>
     </table></td>
-    <td width="9" align="right"><img src="IMAGE/menu_ybg.jpg" width="9" height="29"></td>
+    <td width="9" align="right"><img src="image/menu_ybg.jpg" width="9" height="29"></td>
   </tr>
   </form>
 </table>
