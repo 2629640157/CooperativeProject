@@ -15,7 +15,7 @@ public class Worker {
     private int hige;
     private String sellphone;
     private String phone;
-    private String type;
+    private String kinds;
     private Date worktime;
     private String defect;
     private String photo;
@@ -46,7 +46,7 @@ public class Worker {
     public Worker() {
     }
 
-    public Worker(int wid, Company company, String wname, String wsex, String idcard, Date birth, int wage, int hige, String sellphone, String phone, String type, Date worktime, String defect, String photo, String jhddress, String address, String card, String bxnumber, String language, String status, String hystatus, String zjstatus, String tjstatus, Date tjtime, String grskills, String jieshao, Date timerequire, String salaryrequire, String live, String eat, Date starttime, int companyid, Experience experience, Family family, Train train) {
+    public Worker(int wid, Company company, String wname, String wsex, String idcard, Date birth, int wage, int hige, String sellphone, String phone, String kinds, Date worktime, String defect, String photo, String jhddress, String address, String card, String bxnumber, String language, String status, String hystatus, String zjstatus, String tjstatus, Date tjtime, String grskills, String jieshao, Date timerequire, String salaryrequire, String live, String eat, Date starttime, int companyid, Experience experience, Family family, Train train) {
         this.wid = wid;
         this.company = company;
         this.wname = wname;
@@ -57,7 +57,7 @@ public class Worker {
         this.hige = hige;
         this.sellphone = sellphone;
         this.phone = phone;
-        this.type = type;
+        this.kinds = kinds;
         this.worktime = worktime;
         this.defect = defect;
         this.photo = photo;
@@ -164,12 +164,12 @@ public class Worker {
         this.phone = phone;
     }
 
-    public String getType() {
-        return type;
+    public String getKinds() {
+        return kinds;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setKinds(String kinds) {
+        this.kinds = kinds;
     }
 
     public Date getWorktime() {

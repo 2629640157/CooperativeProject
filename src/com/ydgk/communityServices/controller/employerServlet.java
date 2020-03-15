@@ -25,7 +25,8 @@ public class employerServlet extends HttpServlet {
         if (type.equals("queryEmployers")) {
             queryEmployers(request,response);
 
-        } else if (type.equals("")) {
+        } else if (type.equals("query")) {
+            query(request,response);
         } else if (type.equals("")) {
         } else if (type.equals("")) {
         } else if (type.equals("")) {
@@ -33,6 +34,10 @@ public class employerServlet extends HttpServlet {
         } else if (type.equals("")) {
         } else if (type.equals("")) {
         }else {}
+    }
+
+    private void query(HttpServletRequest request, HttpServletResponse response) {
+
     }
 
     private void queryEmployers(HttpServletRequest request, HttpServletResponse response) {
@@ -43,7 +48,7 @@ public class employerServlet extends HttpServlet {
         String status = request.getParameter("status");
         String kinds = request.getParameter("kinds");
         Employer employer = new Employer(ename, esex, phone);
-        Deal deal = new Deal(status, kinds);
+        Deal deal = new Deal(status, kinds,employer);
 
 
     }

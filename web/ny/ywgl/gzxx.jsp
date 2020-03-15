@@ -28,32 +28,34 @@ function doDBClick(url,operator,type) {
   </tr>
 </table>
 <br/>
-<form action="${pageContext.request.contextPath}/ny/employer" method="post">
+<form action="${pageContext.request.contextPath}/ny/ywgl/deal" method="post">
+    <input type="hidden" name="type" value="query">
   <table width="96%" height="30" border="0" align="center" cellpadding="0" cellspacing="0" class="MENU_line">
     <tr>
       <td width="67%" align="right" class="text" nowrap>&nbsp; 姓名：
-        <input type="text" name="ename" maxlength="20" size="12"  class="input">
+        <input type="text" name="ename" maxlength="20" size="12" value="${deal.employer.ename}"  class="input">
         &nbsp;&nbsp;性别：
-        <input type="radio" name="esex" id="radio" value="man">
+        <input type="radio" name="esex" id="radio" value="男"  >
         男
-        <input type="radio" name="esex" id="radio2" value="woman">
+        <input type="radio" name="esex" id="radio2" value="女" >
         女 &nbsp;&nbsp; 电话：
-        <input type="text" name="phone" maxlength="20" size="12"  class="input">
+        <input type="text" name="phone" maxlength="20" size="12" value="${deal.employer.phone}"  class="input">
        状态：
-        <select name="status" id="select" class="input">
-          <option>请选择</option>
+        <select name="status" id="select" class="input" value="${deal.status}">
+          <option value="" selected>请选择</option>
+          <option>未雇佣</option>
+          <option>已雇佣</option>
         </select>
         雇用职位：
-        <select name="kinds" id="select2" class="input">
-          <option selected>请选择</option>
-          <option>	保姆</option>
-          <option>月嫂</option>
-          <option>家教</option>
-          <option>钟点工</option>
+        <select name="kinds" id="select2" class="input" value="${deal.kinds}">
+          <option selected >请选择</option>
+          <option >	保姆</option>
+          <option >月嫂</option>
+          <option >家教</option>
+          <option > 钟点工</option>
         </select>
         <input type="submit"  value="查询" class="button_new">
         <input type="button" name="searchbtn2" value="新增" class="button_new"onClick="javascript:location.href='gzxx_xz.jsp'" >
-        <input type="hidden" name="type" value="queryEmployers">
       &nbsp;&nbsp; </td>
     </tr>
   </table>
@@ -71,17 +73,19 @@ function doDBClick(url,operator,type) {
       <td width="14%" align="center" nowrap id=".submit_date" ><strong>录入日期</strong></td>
       <td width="10%" align="center" nowrap id=".submit_date" ><strong>操作</strong></td>
     </tr>
+      <c:forEach var="deal" items="${dealList}">
     <tr align="center" class="td2"  onmouseover="javascript:changeBgColorOnMouseOver(this);" onMouseOut="javascript:changeBgColorOnMouseOut(this);" onDblClick="doDBClick('bl.htm',true,'2');">
-      <td nowrap align="center" width="3%">1 </td>
-      <td align="center" nowrap>张三</td>
-      <td height="14" align="center" nowrap>女</td>
-      <td align="center" nowrap>45</td>
-      <td align="left" nowrap>保姆 月嫂</td>
-      <td align="center" nowrap>1800-2300</td>
-      <td align="center" nowrap>未雇用</td>
-      <td align="center" nowrap>2010-02-22 13:53:00&nbsp; </td>
+      <td nowrap align="center" width="3%">${deal.did} </td>
+      <td align="center" nowrap>${deal.employer.ename}</td>
+      <td height="14" align="center" nowrap>${deal.employer.esex}</td>
+      <td align="center" nowrap>${deal.employer.eage}</td>
+      <td align="left" nowrap>${deal.kinds}</td>
+      <td align="center" nowrap>${deal.employer.min_salary}-${deal.employer.max_salary}</td>
+      <td align="center" nowrap>${deal.status}</td>
+      <td align="center" nowrap>${deal.submitdate}&nbsp; </td>
       <td align="center" nowrap><a href="gzxx_ck.jsp">查看</a> <a href="gzxx_xg.htm">修改</a> <a href="lsda.htm">历史档案</a></td>
     </tr>
+      </c:forEach>
 
   </table>
   <table width="96%" height="10"  border="0" align="center" cellpadding="0" cellspacing="0">

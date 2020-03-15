@@ -33,9 +33,10 @@ public class Deal {
         this.submitdate = submitdate;
     }
 
-    public Deal(String status, String kinds) {
+    public Deal(String status, String kinds, Employer employer) {
         this.status = status;
         this.kinds = kinds;
+        this.employer = employer;
     }
 
     public Deal() {
@@ -121,4 +122,5 @@ public class Deal {
     public void setStatus(String status) {
         this.status = status;
     }
+
 }
