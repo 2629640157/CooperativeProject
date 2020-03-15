@@ -11,7 +11,7 @@ import java.io.IOException;
  * @author 游斌
  * @create 2020-03-14  18:06
  */
-@WebServlet("/ny/company")
+@WebServlet("/ny/inform")
 public class informServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);

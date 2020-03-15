@@ -7,20 +7,22 @@ package com.ydgk.communityServices.entity;
  */
 public class Status {
     private  int   id;
-    private  int word_id;
     private  int sender;
     private  int accept;
     private  int state;
+    //外键
+    private  Message message;
 
-    public Status(int id, int word_id, int sender, int accept, int state) {
+
+    public Status() {
+    }
+
+    public Status(int id, int sender, int accept, int state, Message message) {
         this.id = id;
-        this.word_id = word_id;
         this.sender = sender;
         this.accept = accept;
         this.state = state;
-    }
-
-    public Status() {
+        this.message = message;
     }
 
     public int getId() {
@@ -31,12 +33,12 @@ public class Status {
         this.id = id;
     }
 
-    public int getWord_id() {
-        return word_id;
+    public Message getMessage() {
+        return message;
     }
 
-    public void setWord_id(int word_id) {
-        this.word_id = word_id;
+    public void setMessage(Message message) {
+        this.message = message;
     }
 
     public int getSender() {

@@ -9,15 +9,15 @@ public class Experience {
     private int eid;
     private int wid;
     private String workplace;
-    private String type;
+    private String kinds;
     private String duty;
     private Date worktime;
 
-    public Experience(int eid, int wid, String workplace, String type, String duty, Date worktime) {
+    public Experience(int eid, int wid, String workplace, String kinds, String duty, Date worktime) {
         this.eid = eid;
         this.wid = wid;
         this.workplace = workplace;
-        this.type = type;
+        this.kinds = kinds;
         this.duty = duty;
         this.worktime = worktime;
     }
@@ -49,12 +49,12 @@ public class Experience {
         this.workplace = workplace;
     }
 
-    public String getType() {
-        return type;
+    public String getKinds() {
+        return kinds;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setKinds(String kinds) {
+        this.kinds = kinds;
     }
 
     public String getDuty() {

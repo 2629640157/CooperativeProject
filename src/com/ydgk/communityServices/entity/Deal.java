@@ -8,25 +8,54 @@ import java.util.Date;
  * @create 2020-03-14-11:33
  */
 public class Deal {
-    private  int did;
-    private int cid;
-    private int eid;
-    private int wid;
+    private int did;
     private Date starttime;
-    private  Date usefultime;
-    private  String status;
+    private Date usefultime;
+    private String status;
+    private int salary;
+    private String kinds;
+    private String introducefee;
+    private Date submitdate;
+    //2个外键
+    private Employer employer;
+    private Worker worker;
 
-    public Deal(int did, int cid, int eid, int wid, Date starttime, Date usefultime, String status) {
+    public Deal(int did, Employer employer, Worker worker, Date starttime, Date usefultime, String status, int salary, String kinds, String introducefee, Date submitdate) {
         this.did = did;
-        this.cid = cid;
-        this.eid = eid;
-        this.wid = wid;
+        this.employer = employer;
+        this.worker = worker;
         this.starttime = starttime;
         this.usefultime = usefultime;
         this.status = status;
+        this.salary = salary;
+        this.kinds = kinds;
+        this.introducefee = introducefee;
+        this.submitdate = submitdate;
+    }
+
+    public Deal(String status, String kinds) {
+        this.status = status;
+        this.kinds = kinds;
     }
 
     public Deal() {
+    }
+
+
+    public Employer getEmployer() {
+        return employer;
+    }
+
+    public void setEmployer(Employer employer) {
+        this.employer = employer;
+    }
+
+    public Worker getWorker() {
+        return worker;
+    }
+
+    public void setWorker(Worker worker) {
+        this.worker = worker;
     }
 
     public int getDid() {
@@ -37,28 +66,36 @@ public class Deal {
         this.did = did;
     }
 
-    public int getCid() {
-        return cid;
+    public int getSalary() {
+        return salary;
     }
 
-    public void setCid(int cid) {
-        this.cid = cid;
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 
-    public int getEid() {
-        return eid;
+    public String getKinds() {
+        return kinds;
     }
 
-    public void setEid(int eid) {
-        this.eid = eid;
+    public void setKinds(String kinds) {
+        this.kinds = kinds;
     }
 
-    public int getWid() {
-        return wid;
+    public String getIntroducefee() {
+        return introducefee;
     }
 
-    public void setWid(int wid) {
-        this.wid = wid;
+    public void setIntroducefee(String introducefee) {
+        this.introducefee = introducefee;
+    }
+
+    public Date getSubmitdate() {
+        return submitdate;
+    }
+
+    public void setSubmitdate(Date submitdate) {
+        this.submitdate = submitdate;
     }
 
     public Date getStarttime() {

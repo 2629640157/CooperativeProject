@@ -19,8 +19,8 @@ public class workerServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String type = request.getParameter("type");
-        if (type.equals("")) {
-
+        if (type.equals("grxx_cx")) {
+            grxx_cx(request,response);
         } else if (type.equals("")) {
         } else if (type.equals("")) {
         } else if (type.equals("")) {
@@ -29,5 +29,25 @@ public class workerServlet extends HttpServlet {
         } else if (type.equals("")) {
         } else if (type.equals("")) {
         }else {}
+    }
+
+
+    /**
+     * 用工检索
+     * @param request
+     * @param response
+     */
+
+    private void grxx_cx(HttpServletRequest request, HttpServletResponse response) {
+        request.getParameter("wname");
+        request.getParameter("wsex");
+        request.getParameter("wageStart");
+        request.getParameter("wageEnd");
+        request.getParameter("");
+        request.getParameter("");
+        request.getParameter("");
+        request.getParameter("");
+        request.getParameter("");
+        request.getParameter("");
     }
 }

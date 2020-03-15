@@ -7,7 +7,6 @@ package com.ydgk.communityServices.entity;
  */
 public class Worker {
     private int wid;
-    private int cid;
     private String wname;
     private String wsex;
     private String idcard;
@@ -38,10 +37,18 @@ public class Worker {
     private String eat;
     private Date starttime;
     private int companyid;
+    //4个外键
+    private Company company;
+    private  Experience experience;
+    private  Family family;
+    private  Train train;
 
-    public Worker(int wid, int cid, String wname, String wsex, String idcard, Date birth, int wage, int hige, String sellphone, String phone, String type, Date worktime, String defect, String photo, String jhddress, String address, String card, String bxnumber, String language, String status, String hystatus, String zjstatus, String tjstatus, Date tjtime, String grskills, String jieshao, Date timerequire, String salaryrequire, String live, String eat, Date starttime, int companyid) {
+    public Worker() {
+    }
+
+    public Worker(int wid, Company company, String wname, String wsex, String idcard, Date birth, int wage, int hige, String sellphone, String phone, String type, Date worktime, String defect, String photo, String jhddress, String address, String card, String bxnumber, String language, String status, String hystatus, String zjstatus, String tjstatus, Date tjtime, String grskills, String jieshao, Date timerequire, String salaryrequire, String live, String eat, Date starttime, int companyid, Experience experience, Family family, Train train) {
         this.wid = wid;
-        this.cid = cid;
+        this.company = company;
         this.wname = wname;
         this.wsex = wsex;
         this.idcard = idcard;
@@ -72,9 +79,9 @@ public class Worker {
         this.eat = eat;
         this.starttime = starttime;
         this.companyid = companyid;
-    }
-
-    public Worker() {
+        this.experience = experience;
+        this.family = family;
+        this.train = train;
     }
 
     public int getWid() {
@@ -85,12 +92,12 @@ public class Worker {
         this.wid = wid;
     }
 
-    public int getCid() {
-        return cid;
+    public Company getCompany() {
+        return company;
     }
 
-    public void setCid(int cid) {
-        this.cid = cid;
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public String getWname() {
@@ -331,5 +338,29 @@ public class Worker {
 
     public void setCompanyid(int companyid) {
         this.companyid = companyid;
+    }
+
+    public Experience getExperience() {
+        return experience;
+    }
+
+    public void setExperience(Experience experience) {
+        this.experience = experience;
+    }
+
+    public Family getFamily() {
+        return family;
+    }
+
+    public void setFamily(Family family) {
+        this.family = family;
+    }
+
+    public Train getTrain() {
+        return train;
+    }
+
+    public void setTrain(Train train) {
+        this.train = train;
     }
 }

@@ -42,6 +42,12 @@ public class Employer {
     public Employer() {
     }
 
+    public Employer(String ename, String esex, String phone) {
+        this.ename = ename;
+        this.esex = esex;
+        this.phone = phone;
+    }
+
     public Employer(int eid, int cid, String ename, String esex, int eage, String nation, String nationplace, String education, String idcard, String workplace, String duty, String htnumber, Date httime, String phone, String cellphone, String address, String hkaddress, String serviceaddress, String familyaddress, String familynumber, String require, String content, String area, String habit, String other, int agent, Date time, float max_salary, float min_salary, Date brith) {
         this.eid = eid;
         this.cid = cid;
@@ -74,6 +80,8 @@ public class Employer {
         this.min_salary = min_salary;
         this.brith = brith;
     }
+
+
 
     public int getEid() {
         return eid;
