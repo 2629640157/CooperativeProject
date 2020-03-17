@@ -39,6 +39,10 @@ public class Deal {
         this.employer = employer;
     }
 
+    public Deal(int did) {
+        this.did = did;
+    }
+
     public Deal() {
     }
 

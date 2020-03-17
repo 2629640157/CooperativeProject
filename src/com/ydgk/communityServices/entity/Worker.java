@@ -1,5 +1,5 @@
 package com.ydgk.communityServices.entity;
-
+import java.util.Date;
 /**
  * @author gentleman
  * @description ...
@@ -10,7 +10,7 @@ public class Worker {
     private String wname;
     private String wsex;
     private String idcard;
-    private Date birth;
+    private  Date birth;
     private int wage;
     private int hige;
     private String sellphone;
@@ -46,7 +46,7 @@ public class Worker {
     public Worker() {
     }
 
-    public Worker(int wid, Company company, String wname, String wsex, String idcard, Date birth, int wage, int hige, String sellphone, String phone, String kinds, Date worktime, String defect, String photo, String jhddress, String address, String card, String bxnumber, String language, String status, String hystatus, String zjstatus, String tjstatus, Date tjtime, String grskills, String jieshao, Date timerequire, String salaryrequire, String live, String eat, Date starttime, int companyid, Experience experience, Family family, Train train) {
+    public Worker(int wid, Company company, String wname, String wsex, String idcard, Date birth, int wage, int hige, String sellphone, String phone, String kinds,Date  worktime, String defect, String photo, String jhddress, String address, String card, String bxnumber, String language, String status, String hystatus, String zjstatus, String tjstatus, Date tjtime, String grskills, String jieshao, Date timerequire, String salaryrequire, String live, String eat, Date starttime, int companyid, Experience experience, Family family, Train train) {
         this.wid = wid;
         this.company = company;
         this.wname = wname;
@@ -363,4 +363,6 @@ public class Worker {
     public void setTrain(Train train) {
         this.train = train;
     }
+
+
 }

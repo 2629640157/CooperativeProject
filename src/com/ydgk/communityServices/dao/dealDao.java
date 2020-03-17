@@ -2,6 +2,7 @@ package com.ydgk.communityServices.dao;
 
 import com.ydgk.communityServices.entity.Deal;
 import com.ydgk.communityServices.entity.Employer;
+import com.ydgk.communityServices.entity.Worker;
 import com.ydgk.communityServices.util.JdbcUtil;
 import com.ydgk.communityServices.util.Page;
 
@@ -20,6 +21,98 @@ public class dealDao extends BaseDao {
     BaseDao bd = new BaseDao();
 
     /**
+     * 历史档案功能(通过雇主id找到他的所有交易记录)
+     * @param eid
+     * @param page
+     * @return
+     */
+    public List<Deal> queryDealsByEmployer (int eid, Page page) {
+        List<Deal> dealList = new ArrayList<>();
+        Connection con = JdbcUtil.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = " select  w.wid,wname,wsex,introducefee,d.starttime,worktime,dtype,salary,usefultime,time,w.cellphone  from worker w JOIN deal d on w.wid=d.wid join employer e on e.eid=d.eid WHERE e.eid=? limit ?,?";
+        try {
+            ps = con.prepareStatement(sql);
+            rs = bd.exeQuery(con, ps,eid,(page.getPageNow()-1)*page.getPageSize(),page.getPageSize());
+            while (rs != null && rs.next()) {
+                Deal dealShow = new Deal();
+                Employer employer = new Employer();
+                Worker worker=new Worker();
+                worker.setWid(rs.getInt(1));
+                worker.setWname(rs.getString(2));
+                worker.setWsex(rs.getString(3));
+                dealShow.setIntroducefee(rs.getString(4));
+                dealShow.setStarttime(rs.getDate(5));
+                worker.setWorktime(rs.getDate(6));
+                dealShow.setKinds(rs.getString(7));
+                dealShow.setSalary(rs.getInt(8));
+                dealShow.setUsefultime(rs.getDate(9));
+                employer.setTime(rs.getDate(10));
+                worker.setSellphone(rs.getString(11));
+                dealShow.setWorker(worker);
+                dealShow.setEmployer(employer);
+                dealList.add(dealShow);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            bd.closeAll(rs, ps, con);
+        }
+        return dealList;
+    }
+
+    /**
+     * 根据雇主id找到具有员工的交易数量
+     * @param eid
+     * @return
+     */
+    public int dealCountsByEmployer(int eid) {
+        int i = 0;
+        Connection con = JdbcUtil.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "select  count(*) FROM deal d JOIN employer e on d.eid=e.eid join worker w on w.wid=d.wid where  e.eid=?" ;
+        try {
+            ps = con.prepareStatement(sql);
+            rs = bd.exeQuery(con, ps,eid);
+            if (rs!=null&&rs.next()) {
+                i = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            bd.closeAll(rs, ps, con);
+        }
+        return i;
+    }
+    /**
+     * 获取交易中数量
+     *
+     * @return
+     */
+    public int dealCounts(Deal deal) {
+        int i = 0;
+        String condition=getCondition(deal);
+        Connection con = JdbcUtil.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "select  count(*) FROM deal d JOIN employer e on d.eid=e.eid " +condition;
+        try {
+            ps = con.prepareStatement(sql);
+            rs = bd.exeQuery(con, ps);
+            if (rs.next()) {
+                i = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            bd.closeAll(rs, ps, con);
+        }
+        return i;
+    }
+
+    /**
      * 业务管理-->客户管理(雇主信息)
      * 全查询+模糊查询+分页
      *
@@ -32,10 +125,10 @@ public class dealDao extends BaseDao {
         Connection con = JdbcUtil.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "SELECT d.did,ename,esex,eage,dtype,min_salary ,max_salary,`status`,submitdate FROM deal d JOIN employer e on d.eid=e.eid" + condition;
+        String sql = "SELECT d.did,ename,esex,eage,dtype,min_salary ,max_salary,`status`,submitdate FROM deal d JOIN employer e on d.eid=e.eid" + condition +" limit ?,?";
         try {
             ps = con.prepareStatement(sql);
-            rs = bd.exeQuery(con, ps);
+            rs = bd.exeQuery(con, ps,(page.getPageNow()-1)*page.getPageSize(),page.getPageSize());
             while (rs != null && rs.next()) {
                 Deal dealShow = new Deal();
                 Employer employer = new Employer();
@@ -96,9 +189,9 @@ public class dealDao extends BaseDao {
         if (conditionStr.size() > 0) {
             for (int i = 0; i < conditionStr.size(); i++) {
                 if (i == 0) {
-                    condition=" where "+conditionStr.get(i);
-                }else {
-                    condition=" and "+conditionStr.get(i);
+                    condition = " where " + conditionStr.get(i);
+                } else {
+                    condition = " and " + conditionStr.get(i);
                 }
             }
         }

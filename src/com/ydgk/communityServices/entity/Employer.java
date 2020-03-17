@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class Employer {
     private  int eid;
-    private  int cid;
+    private  Company company;
     private String  ename;
    private String esex;
     private int eage;
@@ -39,6 +39,34 @@ public class Employer {
     private float min_salary;
     private Date brith;
 
+    public Employer(String ename, String esex, int eage, String nation, String nationplace, String education, String idcard, String workplace, String duty, String htnumber, Date httime, String phone, String cellphone, String address, String hkaddress, String serviceaddress, String familyaddress, String familynumber, String require, String content, String area, String habit, String other, Integer agent, Date time) {
+        this.ename = ename;
+        this.esex = esex;
+        this.eage = eage;
+        this.nation = nation;
+        this.nationplace = nationplace;
+        this.education = education;
+        this.idcard = idcard;
+        this.workplace = workplace;
+        this.duty = duty;
+        this.htnumber = htnumber;
+        this.httime = httime;
+        this.phone = phone;
+        this.cellphone = cellphone;
+        this.address = address;
+        this.hkaddress = hkaddress;
+        this.serviceaddress = serviceaddress;
+        this.familyaddress = familyaddress;
+        this.familynumber = familynumber;
+        this.require = require;
+        this.content = content;
+        this.area = area;
+        this.habit = habit;
+        this.other = other;
+        this.agent = agent;
+        this.time = time;
+    }
+
     public Employer() {
     }
 
@@ -48,9 +76,9 @@ public class Employer {
         this.phone = phone;
     }
 
-    public Employer(int eid, int cid, String ename, String esex, int eage, String nation, String nationplace, String education, String idcard, String workplace, String duty, String htnumber, Date httime, String phone, String cellphone, String address, String hkaddress, String serviceaddress, String familyaddress, String familynumber, String require, String content, String area, String habit, String other, int agent, Date time, float max_salary, float min_salary, Date brith) {
+    public Employer(int eid,   Company company, String ename, String esex, int eage, String nation, String nationplace, String education, String idcard, String workplace, String duty, String htnumber, Date httime, String phone, String cellphone, String address, String hkaddress, String serviceaddress, String familyaddress, String familynumber, String require, String content, String area, String habit, String other, Integer agent, Date time, float max_salary, float min_salary, Date brith) {
         this.eid = eid;
-        this.cid = cid;
+        this.company = company;
         this.ename = ename;
         this.esex = esex;
         this.eage = eage;
@@ -91,12 +119,17 @@ public class Employer {
         this.eid = eid;
     }
 
-    public int getCid() {
-        return cid;
+
+    public Company getCompany() {
+        return company;
     }
 
-    public void setCid(int cid) {
-        this.cid = cid;
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    public void setAgent(int agent) {
+        this.agent = agent;
     }
 
     public String getEname() {
@@ -287,7 +320,7 @@ public class Employer {
         return agent;
     }
 
-    public void setAgent(int agent) {
+    public void setAgent(Integer agent) {
         this.agent = agent;
     }
 

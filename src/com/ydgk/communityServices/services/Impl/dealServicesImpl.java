@@ -17,4 +17,19 @@ public class dealServicesImpl implements dealServices {
     public List<Deal> queryDeals(Deal deal,Page page) {
         return dealDao.queryDeals(deal,page);
     }
+
+    @Override
+    public int dealCounts(Deal deal) {
+        return dealDao.dealCounts(deal);
+    }
+
+    @Override
+    public List<Deal> queryDealsByEmployer(int eid, Page page) {
+        return dealDao.queryDealsByEmployer(eid,page);
+    }
+
+    @Override
+    public int dealCountsByEmployer(int eid) {
+        return dealDao.dealCountsByEmployer(eid);
+    }
 }

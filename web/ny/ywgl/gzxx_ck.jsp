@@ -48,49 +48,49 @@
 <table width="96%" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#bdc7d3" class="text_lb">
   <tr>
     <td width="10%" align="right" bgcolor="#FFFFFF">姓名：</td>
-    <td width="15%" bgcolor="#FFFFFF">张松钠</td>
+    <td width="15%" bgcolor="#FFFFFF">${employer.ename}</td>
     <td width="10%" align="right" bgcolor="#FFFFFF">性别：</td>
     <td width="17%" bgcolor="#FFFFFF">
-      男      </td>
+      ${employer.esex}    </td>
     <td width="10%" align="right" bgcolor="#FFFFFF">年龄：</td>
-    <td width="13%" bgcolor="#FFFFFF">30</td>
+    <td width="13%" bgcolor="#FFFFFF">${employer.eage}</td>
     <td width="10%" align="right" bgcolor="#FFFFFF">民族：</td>
-    <td width="15%" bgcolor="#FFFFFF">汉族</td>
+    <td width="15%" bgcolor="#FFFFFF">${employer.nation}</td>
   </tr>
   <tr>
     <td align="right" bgcolor="#FFFFFF">籍贯：</td>
-    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">${employer.nationplace}</td>
     <td align="right" bgcolor="#FFFFFF">学历：</td>
-    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">${employer.education}</td>
     <td align="right" bgcolor="#FFFFFF">身份证号码：</td>
-    <td colspan="3" bgcolor="#FFFFFF">11111111111111111111111111111</td>
+    <td colspan="3" bgcolor="#FFFFFF">${employer.idcard}</td>
   </tr>
   <tr>
     <td align="right" nowrap bgcolor="#FFFFFF">工作单位：</td>
-    <td colspan="5" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="5" bgcolor="#FFFFFF">${employer.workplace}</td>
     <td align="right" bgcolor="#FFFFFF">职业：</td>
-    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">${employer.duty}</td>
   </tr>
   <tr>
     <td align="right" nowrap bgcolor="#FFFFFF">合同号：</td>
-    <td colspan="5" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="5" bgcolor="#FFFFFF">${employer.htnumber}</td>
     <td align="right" bgcolor="#FFFFFF">合同期限：</td>
-    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">${employer.httime}</td>
   </tr>
   <tr>
     <td align="right" nowrap bgcolor="#FFFFFF">联系电话：</td>
     <td align="center" bgcolor="#FFFFFF">手机</td>
-    <td colspan="4" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="4" bgcolor="#FFFFFF">${employer.phone}/${employer.cellphone}</td>
     <td align="right" bgcolor="#FFFFFF">住宅：</td>
-    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">${employer.address}</td>
   </tr>
   <tr>
     <td align="right" nowrap bgcolor="#FFFFFF">户口所在地：</td>
-    <td colspan="7" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="7" bgcolor="#FFFFFF">${employer.hkaddress}</td>
   </tr>
   <tr>
     <td colspan="2" align="right" bgcolor="#FFFFFF">服务处所（地址）：</td>
-    <td colspan="6" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="6" bgcolor="#FFFFFF">${employer.serviceaddress}</td>
   </tr>
   <tr>
     <td rowspan="6" align="center" bgcolor="#FFFFFF">家<br>
@@ -98,45 +98,45 @@
       资<br>
       料</td>
     <td align="right" bgcolor="#FFFFFF">居住地址：</td>
-    <td colspan="6" align="left" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="6" align="left" bgcolor="#FFFFFF">${employer.familyaddress}</td>
   </tr>
   <tr>
     <td align="right" bgcolor="#FFFFFF">家庭人数：</td>
-    <td colspan="6" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="6" bgcolor="#FFFFFF">${employer.familynumber}</td>
   </tr>
   <tr>
     <td align="right" bgcolor="#FFFFFF">服务内容：</td>
-    <td colspan="6" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="6" bgcolor="#FFFFFF">${employer.content}</td>
   </tr>
   <tr>
     <td align="right" bgcolor="#FFFFFF">房屋面积：</td>
-    <td colspan="6" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="6" bgcolor="#FFFFFF">${employer.area}</td>
   </tr>
   <tr>
     <td align="right" bgcolor="#FFFFFF">饮食习惯：</td>
-    <td colspan="6" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="6" bgcolor="#FFFFFF">${employer.habit}</td>
   </tr>
   <tr>
     <td align="right" bgcolor="#FFFFFF">其他：</td>
-    <td colspan="6" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="6" bgcolor="#FFFFFF">${employer.other}</td>
   </tr>
   <tr>
     <td align="center" nowrap bgcolor="#FFFFFF">要求服务等级：</td>
-    <td colspan="7" align="left" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="7" align="left" bgcolor="#FFFFFF">${employer.require}</td>
   </tr>
   <tr>
     <td align="right" nowrap bgcolor="#FFFFFF">经办人：</td>
-    <td colspan="7" align="left" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="7" align="left" bgcolor="#FFFFFF">${employer.agent}</td>
   </tr>
   <tr>
     <td align="right" nowrap bgcolor="#FFFFFF">登记日期：</td>
-    <td colspan="7" align="left" bgcolor="#FFFFFF">&nbsp;</td>
+    <td colspan="7" align="left" bgcolor="#FFFFFF">${employer.time}</td>
   </tr>
 </table>
 <table width="96%" height="30" border="0" align="center" cellpadding="0" cellspacing="0" >
   <tr>
-    <td width="67%" align="center" class="text" nowrap><input type="submit" name="searchbtn3" value="保  存" class="button_new" onClick="javascript:location.href='gzxx.htm'">
-      <input type="submit" name="searchbtn3" value="返  回" class="button_new"onClick="javascript:location.href='gzxx.htm'" >
+    <td width="67%" align="center" class="text" nowrap><input type="submit" name="searchbtn3" value="保  存" class="button_new" onClick="javascript:location.href='${pageContext.request.contextPath}/ny/ywgl/deal?type=query&pageNow=${pageNow}'">
+      <input type="submit" name="searchbtn3" value="返  回" class="button_new"onClick="javascript:location.href='${pageContext.request.contextPath}/ny/ywgl/deal?type=query&pageNow=${pageNow}'" >
       <input type="hidden" name="mod" value="no">
       &nbsp;&nbsp; </td>
   </tr>

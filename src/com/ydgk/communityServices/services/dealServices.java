@@ -11,5 +11,8 @@ import java.util.List;
  */
 public interface dealServices {
     List<Deal> queryDeals(Deal deal, Page page);
+    int dealCounts(Deal deal);
+    public List<Deal> queryDealsByEmployer (int eid, Page page);
+    public int dealCountsByEmployer(int eid);
 
 }
