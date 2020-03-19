@@ -7,7 +7,7 @@ package com.ydgk.communityServices.entity;
  */
 public class Status {
     private  int   id;
-    private  int sender;
+    private  Integer sender;
     private  int accept;
     private  int state;
     //外键
@@ -17,7 +17,7 @@ public class Status {
     public Status() {
     }
 
-    public Status(int id, int sender, int accept, int state, Message message) {
+    public Status(int id, Integer sender, int accept, int state, Message message) {
         this.id = id;
         this.sender = sender;
         this.accept = accept;
@@ -45,7 +45,7 @@ public class Status {
         return sender;
     }
 
-    public void setSender(int sender) {
+    public void setSender(Integer sender) {
         this.sender = sender;
     }
 

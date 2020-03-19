@@ -17,7 +17,7 @@
          var days = new Array("日", "一", "二","三", "四", "五", "六");
 
          function getDays(month, year) {
-            // StringToDate for leap year when February is selected.
+            // StringAndDateExchange for leap year when February is selected.
             if (1 == month)
                return ((0 == year % 4) && (0 != (year % 100))) ||
                   (0 == year % 400) ? 29 : 28;
@@ -87,7 +87,7 @@
             // This code executes when the user clicks on a day
             // in the calendar.
             if ("TD" == event.srcElement.tagName)
-               // StringToDate whether day is valid.
+               // StringAndDateExchange whether day is valid.
                if ("" != event.srcElement.innerText){
                   //alert(event.srcElement.innerText);
 				  sDate = document.all.year.value + "-" + addZero(document.all.month.value) + "-" + addZero(event.srcElement.innerText)+" "+addZero(today.hour)+":"+addZero(today.minute)+":"+addZero(today.second);				  

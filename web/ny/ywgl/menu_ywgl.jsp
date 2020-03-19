@@ -110,12 +110,12 @@ body {
     <td  width="14"   class="Menu_OutTd"  id="menutd1">&nbsp;</td>
 	
 	<td  width="70" nowrap    class="Menu_OutTd">|<a href="grxx_cx.jsp" target="main">用工检索</a></td>
-    <td  width="70" nowrap  class="Menu_OutTd">|<a href="ddgl.jsp" target="main"> 用工管理</a></td>
+    <td  width="70" nowrap  class="Menu_OutTd">|<a href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers" target="main"> 用工管理</a></td>
 
     <td  width="70" nowrap    class="Menu_OutTd">|<a href="${pageContext.request.contextPath}/ny/ywgl/deal?type=query" target="main"> 客户管理</a></td>
     
-    <td width="70" nowrap  class="Menu_OutTd" >| <a href="mrtz.jsp" target="main">每日通知</a> </td>
-     <td width="70" nowrap  class="Menu_OutTd" >| <a href="message_list.jsp" target="main">短消息</a> </td>
+    <td width="70" nowrap  class="Menu_OutTd" >| <a href="${pageContext.request.contextPath}/ny/ywgl/inform?type=queryInform" target="main">每日通知</a> </td>
+     <td width="70" nowrap  class="Menu_OutTd" >| <a href="${pageContext.request.contextPath}/ny/ywgl/status?type=queryStatus" target="main">短消息</a> </td>
     <td width="676"  nowrap align="right" class="Menu_OutTd"  >&nbsp;</td>
   </tr>
 </table>

@@ -1,5 +1,7 @@
 package com.ydgk.communityServices.entity;
 
+import java.util.Date;
+
 /**
  * @author gentleman
  * @description ...
@@ -8,9 +10,9 @@ package com.ydgk.communityServices.entity;
 public class Inform {
     private int iid;
     private String content;
-    private Date informdate;
+    private java.util.Date informdate;
 
-    public Inform(int iid, String content, Date informdate) {
+    public Inform(int iid, String content, java.util.Date informdate) {
         this.iid = iid;
         this.content = content;
         this.informdate = informdate;
@@ -39,7 +41,7 @@ public class Inform {
         return informdate;
     }
 
-    public void setInformdate(Date informdate) {
+    public void setInformdate(java.util.Date informdate) {
         this.informdate = informdate;
     }
 }

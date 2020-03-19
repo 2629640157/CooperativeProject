@@ -36,7 +36,11 @@
         function goLast() {
             window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=query&pageNow=${page.totalPages}&ename=${deal.employer.ename}&esex=${deal.employer.esex}&phone=${deal.employer.phone}&status=${deal.status}&kinds=${deal.kinds}";
         }
-
+        function gotoPage() {
+            var pageNow=  document.getElementById("pageNow").value;
+            /*window.alert(pageNow)*/
+            window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=query&ename=${deal.employer.ename}&esex=${deal.employer.esex}&phone=${deal.employer.phone}&status=${deal.status}&kinds=${deal.kinds}&pageNow="+pageNow;
+        }
     </script>
 </head>
 <body>
@@ -132,10 +136,11 @@
                         <img src="../image/Previous_no.gif" alt="上一页" width="14" height="13" border="0" onclick="goPrevious()">&nbsp;&nbsp;&nbsp;
                         <img src="../image/Next_no.gif" alt="下一页" width="14" height="13" border="0" onclick="goNext()">&nbsp;&nbsp;&nbsp;
                         <img src="../image/Last_no.gif" alt="尾页" width="18" height="13" border="0" onclick="goLast()">&nbsp;&nbsp;&nbsp;
-                        <a href="javascript:this.document.AwaitForm.submit()" oncontextmenu="return false" onClick="if(this.document.AwaitForm.pageSelect.value==''){ alert('页码必须输入');return false;}
- else {this.document.AwaitForm.paginationAction.value='gotoPage';}">前往</a>
+                     <%--   <a href="javascript:this.document.AwaitForm.submit()" oncontextmenu="return false" onClick="if(this.document.AwaitForm.pageSelect.value==''){ alert('页码必须输入');return false;}
+ else {this.document.AwaitForm.paginationAction.value='gotoPage';}">前往</a>--%>
+                        <a href="javascript:gotoPage()">前往</a>
                         <input type=text size='4' onlytype='int' onfocus='checkTextBoxInput()' name='pageSelect'
-                               value=''/>
+                            id="pageNow"   value=''/>
                         页
                     </td>
                 </tr>

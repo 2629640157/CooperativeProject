@@ -2,9 +2,12 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/web/ny/rlzy/grxx_ss.htm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/ny/ywgl/ddgl_ck.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/ny/ywgl/ddgl_xg.htm" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/ny/ywgl/gzxx_ck.jsp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/ny/ywgl/gzxx_xg.jsp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/ny/ywgl/gzxx_xz.jsp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/ny/ywgl/lsda.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/ny/ywgl/message_add.jsp" charset="UTF-8" />
   </component>
 </project>

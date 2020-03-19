@@ -32,4 +32,14 @@ public class dealServicesImpl implements dealServices {
     public int dealCountsByEmployer(int eid) {
         return dealDao.dealCountsByEmployer(eid);
     }
+
+    @Override
+    public List<Deal> queryWorkerDeals(Deal deal, Page page, String start, String end) {
+        return dealDao.queryWorkerDeals(deal,page,start,end);
+    }
+
+    @Override
+    public int workerCounts(Deal deal, String start, String end) {
+        return dealDao.workerCounts(deal,start,end);
+    }
 }

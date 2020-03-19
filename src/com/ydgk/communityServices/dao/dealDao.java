@@ -19,6 +19,136 @@ import java.util.List;
  */
 public class dealDao extends BaseDao {
     BaseDao bd = new BaseDao();
+    //业务管理--> 用工管理
+
+    /**
+     *业务管理-->用工管理(工人信息)
+     * 全查询+模糊查询+分页
+     * @param deal
+     * @param page
+     * @return
+     */
+    public List<Deal> queryWorkerDeals(Deal deal, Page page,String start,String end) {
+        List<Deal> dealList = new ArrayList<>();
+        String condition = getWCondition(deal,start,end);
+        Connection con = JdbcUtil.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "  select d.did,e.eid,ename,e.phone,e.cellphone, w.wid,wname,w.phone,w.cellphone,salary,dtype,w.`status`,d.starttime  from worker w JOIN deal d on w.wid=d.wid join employer e on e.eid=d.eid" + condition +" limit ?,?";
+        try {
+            ps = con.prepareStatement(sql);
+            rs = bd.exeQuery(con, ps,(page.getPageNow()-1)*page.getPageSize(),page.getPageSize());
+            while (rs != null && rs.next()) {
+                Deal dealShow = new Deal();
+                Employer employer = new Employer();
+                Worker worker=new Worker();
+                dealShow.setDid(rs.getInt(1));
+                employer.setEid(rs.getInt(2));
+                employer.setEname(rs.getString(3));
+                employer.setPhone(rs.getString(4));
+                employer.setCellphone(rs.getString(5));
+                worker.setWid(rs.getInt(6));
+                worker.setWname(rs.getString(7));
+                worker.setPhone(rs.getString(8));
+                worker.setSellphone(rs.getString(9));
+                dealShow.setSalary(rs.getInt(10));
+                dealShow.setKinds(rs.getString(11));
+                worker.setStatus(rs.getString(12));
+                dealShow.setStarttime(rs.getDate(13));
+                dealShow.setWorker(worker);
+                dealShow.setEmployer(employer);
+                dealList.add(dealShow);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            bd.closeAll(rs, ps, con);
+        }
+        return dealList;
+    }
+
+    /**
+     * 获取交易中数量
+     *
+     * @return
+     */
+    public int workerCounts(Deal deal,String start,String end) {
+        int i = 0;
+        String condition=getWCondition(deal,start,end);
+        Connection con = JdbcUtil.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "select  count(*)  from worker w JOIN deal d on w.wid=d.wid join employer e on e.eid=d.eid " +condition;
+        try {
+            ps = con.prepareStatement(sql);
+            rs = bd.exeQuery(con, ps);
+            if (rs.next()) {
+                i = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            bd.closeAll(rs, ps, con);
+        }
+        return i;
+    }
+
+    /**
+     * 获取模糊查询条件
+     *
+     * @param deal
+     * @return
+     */
+    private String getWCondition(Deal deal,String start,String end) {
+        String condition = "";
+        List<String> conditionStr = new ArrayList<>();
+        String enameCondition = "";
+        String startCondition = "";
+        String endCondition = "";
+        String wnameCondition = "";
+        String statusCondition = "";
+
+        if (deal.getEmployer().getEname() != null && !deal.getEmployer().getEname().equals("")) {
+            enameCondition = " ename like '%" + deal.getEmployer().getEname() + "%'";
+            conditionStr.add(enameCondition);
+        }
+        if (start != null && !start.equals("")) {
+            startCondition = " d.starttime > '" + start + "'";
+            conditionStr.add(startCondition);
+        }
+        if (end != null && !end.equals("")) {
+            endCondition = " d.starttime < '" + end+ "'" ;
+            conditionStr.add(endCondition);
+        }
+        if (deal.getWorker().getWname() != null && !deal.getWorker().getWname().equals("")) {
+            wnameCondition = " ename like '%" + deal.getWorker().getWname()  + "%'";
+            conditionStr.add(wnameCondition);
+        }
+        if (deal.getWorker().getStatus() != null && !deal.getWorker().getStatus().equals("")) {
+            statusCondition = " w.`status` = '" +deal.getWorker().getStatus() + "'";
+            conditionStr.add(statusCondition);
+        }
+
+        if (conditionStr.size() > 0) {
+            for (int i = 0; i < conditionStr.size(); i++) {
+                if (i == 0) {
+                    condition = " where " + conditionStr.get(i);
+                } else {
+                    condition =condition+ " and " + conditionStr.get(i);
+                }
+            }
+        }
+        return condition;
+    }
+
+
+
+
+
+
+    //业务管理-->客户管理
+
+
 
     /**
      * 历史档案功能(通过雇主id找到他的所有交易记录)
@@ -93,7 +223,7 @@ public class dealDao extends BaseDao {
      */
     public int dealCounts(Deal deal) {
         int i = 0;
-        String condition=getCondition(deal);
+        String condition=getECondition(deal);
         Connection con = JdbcUtil.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -121,7 +251,7 @@ public class dealDao extends BaseDao {
      */
     public List<Deal> queryDeals(Deal deal, Page page) {
         List<Deal> dealList = new ArrayList<>();
-        String condition = getCondition(deal);
+        String condition = getECondition(deal);
         Connection con = JdbcUtil.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -158,7 +288,7 @@ public class dealDao extends BaseDao {
      * @param deal
      * @return
      */
-    public String getCondition(Deal deal) {
+    private String getECondition(Deal deal) {
         String condition = "";
         List<String> conditionStr = new ArrayList<>();
         String enameCondition = "";
@@ -191,7 +321,7 @@ public class dealDao extends BaseDao {
                 if (i == 0) {
                     condition = " where " + conditionStr.get(i);
                 } else {
-                    condition = " and " + conditionStr.get(i);
+                    condition =condition+ " and " + conditionStr.get(i);
                 }
             }
         }

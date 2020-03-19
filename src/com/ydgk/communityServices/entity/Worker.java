@@ -46,7 +46,16 @@ public class Worker {
     public Worker() {
     }
 
-    public Worker(int wid, Company company, String wname, String wsex, String idcard, Date birth, int wage, int hige, String sellphone, String phone, String kinds,Date  worktime, String defect, String photo, String jhddress, String address, String card, String bxnumber, String language, String status, String hystatus, String zjstatus, String tjstatus, Date tjtime, String grskills, String jieshao, Date timerequire, String salaryrequire, String live, String eat, Date starttime, int companyid, Experience experience, Family family, Train train) {
+    public Worker(String wname, String status) {
+        this.wname = wname;
+        this.status = status;
+    }
+
+    public Worker(String status) {
+        this.status = status;
+    }
+
+    public Worker(int wid, Company company, String wname, String wsex, String idcard, Date birth, int wage, int hige, String sellphone, String phone, String kinds, Date  worktime, String defect, String photo, String jhddress, String address, String card, String bxnumber, String language, String status, String hystatus, String zjstatus, String tjstatus, Date tjtime, String grskills, String jieshao, Date timerequire, String salaryrequire, String live, String eat, Date starttime, int companyid, Experience experience, Family family, Train train) {
         this.wid = wid;
         this.company = company;
         this.wname = wname;

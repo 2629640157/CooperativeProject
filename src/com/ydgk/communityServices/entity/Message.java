@@ -1,6 +1,6 @@
 package com.ydgk.communityServices.entity;
 
-import netscape.security.PrivilegeTable;
+import java.util.Date;
 
 /**
  * @author gentleman
@@ -11,9 +11,9 @@ public class Message {
     private  int word_id;
     private String subject;
     private String content;
-    private Date date_time;
+    private java.util.Date date_time;
 
-    public Message(int word_id, String subject, String content, Date date_time) {
+    public Message(int word_id, String subject, String content, java.util.Date date_time) {
         this.word_id = word_id;
         this.subject = subject;
         this.content = content;
@@ -51,7 +51,7 @@ public class Message {
         return date_time;
     }
 
-    public void setDate_time(Date date_time) {
+    public void setDate_time(java.util.Date date_time) {
         this.date_time = date_time;
     }
 }

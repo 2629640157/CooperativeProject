@@ -3,7 +3,7 @@ package com.ydgk.communityServices.controller;
 import com.ydgk.communityServices.entity.Employer;
 import com.ydgk.communityServices.services.Impl.employerServicesImpl;
 import com.ydgk.communityServices.services.employerServices;
-import com.ydgk.communityServices.util.StringToDate;
+import com.ydgk.communityServices.util.StringAndDateExchange;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -158,7 +158,7 @@ public class employerServlet extends HttpServlet {
         String duty = request.getParameter("duty");
         String htnumber = request.getParameter("htnumber");
         String httimeStr = request.getParameter("httime");
-        Date httime = StringToDate.changeString(httimeStr);
+        Date httime = StringAndDateExchange.changeString(httimeStr);
         String phone = request.getParameter("phone");
         String cellphone = request.getParameter("cellphone");
         String address = request.getParameter("address");
@@ -174,7 +174,7 @@ public class employerServlet extends HttpServlet {
         String agentStr = request.getParameter("agent");
         Integer agent = Integer.valueOf(agentStr);
         String timeStr = request.getParameter("time");
-        Date time = StringToDate.changeString(timeStr);
+        Date time = StringAndDateExchange.changeString(timeStr);
         Employer employer = new Employer(ename, esex, eage, nation, nationplace, education, idcard, workplace, duty, htnumber, httime, phone, cellphone, address, hkaddress, serviceaddress, familyaddress, familynumber, require, content, area, habit, other, agent, time);
         return  employer;
     }

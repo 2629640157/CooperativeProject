@@ -8,7 +8,7 @@ import java.util.Date;
  * @author 游斌
  * @create 2020-03-16  20:54
  */
-public class StringToDate {
+public class StringAndDateExchange {
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD");
     public static Date changeString(String dateStr) {

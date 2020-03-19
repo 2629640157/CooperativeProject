@@ -70,6 +70,10 @@ public class Employer {
     public Employer() {
     }
 
+    public Employer(String ename) {
+        this.ename = ename;
+    }
+
     public Employer(String ename, String esex, String phone) {
         this.ename = ename;
         this.esex = esex;
