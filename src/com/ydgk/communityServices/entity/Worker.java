@@ -46,6 +46,14 @@ public class Worker {
     public Worker() {
     }
 
+    public Worker(String wname, String wsex, Date worktime, String status, String hystatus) {
+        this.wname = wname;
+        this.wsex = wsex;
+        this.worktime = worktime;
+        this.status = status;
+        this.hystatus = hystatus;
+    }
+
     public Worker(String wname, String status) {
         this.wname = wname;
         this.status = status;
@@ -53,6 +61,22 @@ public class Worker {
 
     public Worker(String status) {
         this.status = status;
+    }
+
+    public Worker(int wid,String wname, String wsex, String idcard, Date birth, int wage, int hige, String sellphone, String phone, String kinds, Date worktime, String defect, Company company) {
+        this.wid=wid;
+        this.wname = wname;
+        this.wsex = wsex;
+        this.idcard = idcard;
+        this.birth = birth;
+        this.wage = wage;
+        this.hige = hige;
+        this.sellphone = sellphone;
+        this.phone = phone;
+        this.kinds = kinds;
+        this.worktime = worktime;
+        this.defect = defect;
+        this.company = company;
     }
 
     public Worker(int wid, Company company, String wname, String wsex, String idcard, Date birth, int wage, int hige, String sellphone, String phone, String kinds, Date  worktime, String defect, String photo, String jhddress, String address, String card, String bxnumber, String language, String status, String hystatus, String zjstatus, String tjstatus, Date tjtime, String grskills, String jieshao, Date timerequire, String salaryrequire, String live, String eat, Date starttime, int companyid, Experience experience, Family family, Train train) {

@@ -6,10 +6,7 @@ import com.ydgk.communityServices.entity.Worker;
 import com.ydgk.communityServices.util.JdbcUtil;
 import com.ydgk.communityServices.util.Page;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +17,83 @@ import java.util.List;
 public class dealDao extends BaseDao {
     BaseDao bd = new BaseDao();
     //业务管理--> 用工管理
+//修改
+    public boolean updateDeals(Deal deal) {
+        boolean result = false;
+        Connection con = JdbcUtil.getConnection();
+        PreparedStatement ps = null;
+        String sql = "update employer set ename=?,esex=?,eage=?,nation=?,nativeplace=?,education=?,idcard=?,hkaddress=?,cellphone=?,address=?,duty=?,workplace=?,min_salary=?,max_salary=?,serviceaddress=?,familyaddress=?,familynumber=?,content=?,area=?,habit=?,other=?,agent=? where eid=? ";
+        try {
+            con.setAutoCommit(false);
+            ps = con.prepareStatement(sql);
+            Employer employer = deal.getEmployer();
+            bd.exeUpdate(con, ps, employer.getEname(), employer.getEsex(), employer.getEage(), employer.getNation(), employer.getNationplace(), employer.getEducation(), employer.getIdcard(),employer.getHkaddress(), employer.getCellphone(),   employer.getAddress(),employer.getDuty(), employer.getWorkplace(),employer.getMin_salary(),employer.getMax_salary(),   employer.getServiceaddress(), employer.getFamilyaddress(), employer.getFamilynumber(), employer.getContent(), employer.getArea(), employer.getHabit(), employer.getOther(),  employer.getAgent(),deal.getDid());
+            ps.close();
+            sql = "update worker set cid=?,wname=?,wsex=?,idcard=?,birth=?,hige=?,wage=?,phone=?,cellphone=?,wtype=?,worktime=?,defect=? where wid=?";
+            ps = con.prepareStatement(sql);
+            Worker worker= deal.getWorker();
+            bd.exeUpdate(con,ps,worker.getCompany().getCid(),worker.getWname(),worker.getWsex(),worker.getIdcard(),worker.getBirth(),worker.getHige(),worker.getWage(),worker.getPhone(),worker.getSellphone(),worker.getKinds(),worker.getWorktime(),worker.getDefect(),worker.getWid());
+            ps.close();
+            sql = "update deal set introducefee=?,dtype=?,salary=?,usefultime=?,`status`=? where did=?";
+             ps = con.prepareStatement(sql);
+             bd.exeUpdate(con,ps,deal.getIntroducefee(),deal.getKinds(),deal.getSalary(),deal.getUsefultime(),deal.getStatus(),deal.getDid());
+            con.commit();
+            result=true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            bd.closeAll(null,ps,con);
+        }
+        return  result;
+    }
+
+    //添加
+    public boolean addDeals(Deal deal) {
+        boolean result = false;
+        Connection con = JdbcUtil.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "INSERT into employer(ename,esex,eage,nation,nativeplace,education,idcard,hkaddress,cellphone,address,duty,workplace,min_salary,max_salary,serviceaddress,familyaddress,familynumber,content,area,habit,other,agent) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+        try {
+            con.setAutoCommit(false);
+            ps = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+            Employer employer = deal.getEmployer();
+            bd.exeUpdate(con, ps, employer.getEname(), employer.getEsex(), employer.getEage(), employer.getNation(), employer.getNationplace(), employer.getEducation(), employer.getIdcard(),employer.getHkaddress(), employer.getCellphone(),   employer.getAddress(),employer.getDuty(), employer.getWorkplace(),employer.getMin_salary(),employer.getMax_salary(),   employer.getServiceaddress(), employer.getFamilyaddress(), employer.getFamilynumber(), employer.getContent(), employer.getArea(), employer.getHabit(), employer.getOther(),  employer.getAgent());
+            rs = ps.getGeneratedKeys();
+            int eid=0;
+            if (rs.next()) {
+                //封装服装编号,getInt(1)获取自增的主键
+                eid = rs.getInt(1);
+                //封装到服装对象的cid里面
+                employer.setEid(eid);
+            }
+            ps.close();
+            sql = "insert into worker(cid,wname,wsex,idcard,birth,wage,phone,cellphone,wtype,worktime,defect)  values(?,?,?,?,?,?,?,?,?,?,?)";
+            ps = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+            Worker worker= deal.getWorker();
+            bd.exeUpdate(con,ps,worker.getCompany().getCid(),worker.getWname(),worker.getWsex(),worker.getIdcard(),worker.getBirth(),worker.getWage(),worker.getPhone(),worker.getSellphone(),worker.getKinds(),worker.getWorktime(),worker.getDefect());
+            rs = ps.getGeneratedKeys();
+            int wid=0;
+            if (rs.next()) {
+                //封装服装编号,getInt(1)获取自增的主键
+                wid = rs.getInt(1);
+                //封装到服装对象的cid里面
+                worker.setWid(wid);
+            }
+            ps.close();
+            sql = "insert into deal(eid,wid,introducefee,dtype,salary,usefultime,`status`)  values(?,?,?,?,?,?,?)";
+            ps = con.prepareStatement(sql);
+            bd.exeUpdate(con,ps,eid,wid,deal.getIntroducefee(),deal.getKinds(),deal.getSalary(),deal.getUsefultime(),deal.getStatus());
+            con.commit();
+            result=true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            bd.closeAll(rs,ps,con);
+        }
+        return  result;
+    }
+
 
     /**
      *业务管理-->用工管理(工人信息)
@@ -34,7 +108,7 @@ public class dealDao extends BaseDao {
         Connection con = JdbcUtil.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "  select d.did,e.eid,ename,e.phone,e.cellphone, w.wid,wname,w.phone,w.cellphone,salary,dtype,w.`status`,d.starttime  from worker w JOIN deal d on w.wid=d.wid join employer e on e.eid=d.eid" + condition +" limit ?,?";
+        String sql = "  select d.did,e.eid,ename,e.phone,e.cellphone, w.wid,wname,w.phone,w.cellphone,salary,dtype,d.`status`,d.starttime  from worker w JOIN deal d on w.wid=d.wid join employer e on e.eid=d.eid" + condition +" order by d.did limit ?,?";
         try {
             ps = con.prepareStatement(sql);
             rs = bd.exeQuery(con, ps,(page.getPageNow()-1)*page.getPageSize(),page.getPageSize());
@@ -53,7 +127,7 @@ public class dealDao extends BaseDao {
                 worker.setSellphone(rs.getString(9));
                 dealShow.setSalary(rs.getInt(10));
                 dealShow.setKinds(rs.getString(11));
-                worker.setStatus(rs.getString(12));
+                dealShow.setStatus(rs.getString(12));
                 dealShow.setStarttime(rs.getDate(13));
                 dealShow.setWorker(worker);
                 dealShow.setEmployer(employer);
@@ -124,8 +198,8 @@ public class dealDao extends BaseDao {
             wnameCondition = " ename like '%" + deal.getWorker().getWname()  + "%'";
             conditionStr.add(wnameCondition);
         }
-        if (deal.getWorker().getStatus() != null && !deal.getWorker().getStatus().equals("")) {
-            statusCondition = " w.`status` = '" +deal.getWorker().getStatus() + "'";
+        if (deal.getStatus() != null && !deal.getStatus().equals("")) {
+            statusCondition = " d.`status` = '" +deal.getStatus() + "'";
             conditionStr.add(statusCondition);
         }
 
@@ -172,7 +246,7 @@ public class dealDao extends BaseDao {
                 worker.setWid(rs.getInt(1));
                 worker.setWname(rs.getString(2));
                 worker.setWsex(rs.getString(3));
-                dealShow.setIntroducefee(rs.getString(4));
+                dealShow.setIntroducefee(rs.getInt(4));
                 dealShow.setStarttime(rs.getDate(5));
                 worker.setWorktime(rs.getDate(6));
                 dealShow.setKinds(rs.getString(7));

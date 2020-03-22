@@ -17,29 +17,29 @@
             }
         }
         function goFirst() {
-            window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.worker.status}";
+            window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.status}";
         }
         function goPrevious() {
             if (${page.pageNow gt 1}){
-                window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&pageNow=${page.pageNow-1}&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.worker.status}";
+                window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&pageNow=${page.pageNow-1}&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.status}";
             } else {
-                window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.worker.status}";
+                window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.status}";
             }
         }
         function goNext() {
             if (${page.pageNow lt page.totalPages}){
-                window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&pageNow=${page.pageNow+1}&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.worker.status}";
+                window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&pageNow=${page.pageNow+1}&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.status}";
             } else {
-                window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&pageNow=${page.totalPages}&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.worker.status}";
+                window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&pageNow=${page.totalPages}&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.status}";
             }
         }
         function goLast() {
-            window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&pageNow=${page.totalPages}&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.worker.status}";
+            window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&pageNow=${page.totalPages}&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.status}";
         }
         function gotoPage() {
             var pageNow=  document.getElementById("pageNow").value;
             /*window.alert(pageNow)*/
-            window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.worker.status}&pageNow="+pageNow;
+            window.location.href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&ename=${deal.employer.ename}&start=${start}&end=${end}&wname=${deal.worker.wname}&status=${deal.status}&pageNow="+pageNow;
         }
     </script>
 </head>
@@ -67,14 +67,12 @@
             &nbsp;状态：
             <select name="status" id="select" class="input">
                 <option selected>请选择</option>
-                <option value="未成交">未成交</option>
-                <option value="已成交">已成交</option>
-                <option value="在别处成交">在别处成交</option>
-                <option value="已取消">已取消</option>
+                <option>未雇佣</option>
+                <option>雇佣</option>
             </select>
             <input type="submit" name="searchbtn" value="查询" class="button_new">
             <input type="button" name="searchbtn2" value="新增" class="button_new"
-                   onClick="javascript:location.href='ddgl_xz.htm'">
+                   onClick="javascript:location.href='${pageContext.request.contextPath}/ny/ywgl/deal?type=toAddWorker&pageNow=${page.pageNow}'">
             &nbsp;&nbsp;
         </td>
     </tr>
@@ -111,8 +109,9 @@
         <td align="center" nowrap>${deal.worker.phone}/${deal.worker.sellphone}</td>
         <td align="center" nowrap>${deal.salary}</td>
         <td align="center" nowrap>${deal.kinds}</td>
-        <td align="center" nowrap>${deal.worker.status}</td>
-        <td align="center" nowrap><a href="ddgl_ck.jsp">查看</a> <a href="ddgl_xg.htm">修改</a></td>
+        <td align="center" nowrap>${deal.status}</td>
+        <td align="center" nowrap><a href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkersClear&pageNow=${page.pageNow}&did=${deal.did}">查看
+        </a> <a href="${pageContext.request.contextPath}/ny/ywgl/deal?type=toUpdateWorker&pageNow=${page.pageNow}&did=${deal.did}">修改</a></td>
     </tr>
     </c:forEach>
 </table>

@@ -67,7 +67,7 @@
                 <select name="status" id="select" class="input" value="${deal.status}">
                     <option value="" selected>请选择</option>
                     <option>未雇佣</option>
-                    <option>已雇佣</option>
+                    <option>雇佣</option>
                 </select>
                 雇用职位：
                 <select name="kinds" id="select2" class="input" value="${deal.kinds}">

@@ -13,6 +13,7 @@
 </style>
 <head>
     <title>Untitled Document</title>
+    <script type="text/javascript" src="../jqurey/jquery-1.3.2.min.js"></script>
     <script type="text/javascript" src="../javascript/validator.js"></script>
     <script type="text/javascript" src="../js/public.js"></script>
     <script type="text/javascript" src="../javascript/handleArchive.js"></script>
@@ -44,16 +45,16 @@
     </tr>
 </table>
 <br>
-<form action="${pageContext.request.contextPath}/ny/worker" method="post">
+<form action="${pageContext.request.contextPath}/ny/ywgl/worker" method="post">
     <input type="hidden" name="type" value="grxx_cx">
 <table width="96%" height="270" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#bdc7d3"
-       class="text_lb">
+       class="text_lb" id="tr2">
     <tr>
         <td height="23" align="right" bgcolor="#FFFFFF">姓名</td>
         <td bgcolor="#FFFFFF"><input name="wname" type="text" id="textarea2" value="" size="30" class="pi"></td>
         <td align="right" bgcolor="#FFFFFF">性别</td>
-        <td bgcolor="#FFFFFF"><input type="radio" name="wsex" id="radio" value="man">男
-            <input type="radio" name="wsex" id="radio2" value="woman">女
+        <td bgcolor="#FFFFFF"><input type="radio" name="wsex" id="radio" value="男">男
+            <input type="radio" name="wsex" id="radio2" value="女">女
         </td>
     </tr>
     <tr>
@@ -88,60 +89,64 @@
             <input type="checkbox" name="checkbox" id="checkbox15"/>书法&nbsp;
         </td>
     </tr>
-    <tr>
-        <td height="23" align="right" bgcolor="#FFFFFF">语言</td>
-        <td colspan="4" bgcolor="#FFFFFF"><input type="checkbox" name="checkbox2" id="checkbox21"/>普通话&nbsp;
-            <input type="checkbox" name="checkbox2" id="checkbox22"/>广东话&nbsp;
-            <input type="checkbox" name="checkbox3" id="checkbox23"/>英语&nbsp; 其他语言&nbsp;
-            <input name="textarea16" type="text" id="textarea16" value="" size="30" class="pi"></td>
+    <tr id="tr1">
+        <td height="23" align="right" bgcolor="#FFFFFF" >语言</td>
+        <td colspan="4" bgcolor="#FFFFFF"><input type="checkbox" class="language" name="language" id="checkbox21" value="普通话"/>普通话&nbsp;
+            <input type="checkbox" class="language"  name="language" id="checkbox22" value="广东话"/>广东话&nbsp;
+            <input type="checkbox" class="language" name="language" id="checkbox23"  value="英语"/>英语&nbsp;
+            其他语言&nbsp;<input name="language" type="text" id="textarea16" value="" size="30" class="pi">
+
     </tr>
     <tr>
         <td height="23" align="right" bgcolor="#FFFFFF">状态</td>
-        <td colspan="4" bgcolor="#FFFFFF"><input type="radio" name="radio" id="radio4" value="radio"/>在岗&nbsp;&nbsp;
-            <input type="radio" name="radio" id="radio5" value="radio"/> 待岗&nbsp;&nbsp;
-            <input type="radio" name="radio" id="radio6" value="radio"/>其他&nbsp;
-            <input name="textarea17" type="text" id="textarea17" value="" size="30" class="pi"></td>
+        <td colspan="4" bgcolor="#FFFFFF"><input type="radio" name="status" id="radio4"  value="在岗"/>在岗&nbsp;&nbsp;
+            <input type="radio" name="status" id="radio5" value="待岗"> 待岗&nbsp;&nbsp;
+            <input type="radio" name="status" id="radio6" value="其他"/>其他&nbsp;
+            <input name="statustext" type="text" id="textarea17"  size="30" class="pi"></td>
     </tr>
     <tr>
         <td height="23" align="right" bgcolor="#FFFFFF">婚姻状况</td>
-        <td colspan="4" bgcolor="#FFFFFF"><input type="radio" name="radio" id="radio7" value="radio"/>已婚&nbsp;
-            <input type="radio" name="radio" id="radio8" value="radio"/>未婚&nbsp;&nbsp;
-            <input type="radio" name="radio" id="radio9" value="radio"/>离异&nbsp;
-            <input type="radio" name="radio" id="radio10" value="radio"/>丧偶&nbsp;&nbsp;
-            <input type="radio" name="radio" id="radio11" value="radio"/>其他：&nbsp;
-            <input name="textarea18" type="text" id="textarea18" value="" size="30" class="pi"></td>
+        <td colspan="4" bgcolor="#FFFFFF"><input type="radio" name="hystatus" id="radio7" value="已婚"/>已婚&nbsp;
+            <input type="radio" name="hystatus" id="radio8" value="未婚"/>未婚&nbsp;&nbsp;
+            <input type="radio" name="hystatus" id="radio9" value="离异"/>离异&nbsp;
+            <input type="radio" name="hystatus" id="radio10" value="丧偶"/>丧偶&nbsp;&nbsp;
+            <input type="radio" name="hystatus" id="radio11" value="其他"/>其他：&nbsp;
+            <input name="hystatustext" type="text" id="textarea18" value="" size="30" class="pi"></td>
     </tr>
-    <tr>
+    <tr >
         <td height="23" align="right" bgcolor="#FFFFFF">证件状况</td>
-        <td colspan="4" bgcolor="#FFFFFF"><input type="checkbox" name="checkbox4" id="checkbox41"/>计生证&nbsp;
-            <input type="checkbox" name="checkbox4" id="checkbox42"/>健康证&nbsp;&nbsp;
-            <input type="checkbox" name="checkbox4" id="checkbox43"/>暂住证&nbsp;&nbsp;
-            <input type="checkbox" name="checkbox4" id="checkbox44"/>上岗证֤
+        <td colspan="4" bgcolor="#FFFFFF"><input type="checkbox" class="zjstatus" name="zjstatus" id="checkbox41" value="计生证"/>计生证&nbsp;
+            <input type="checkbox" name="zjstatus" class="zjstatus" id="checkbox42" value="健康证"/>健康证&nbsp;&nbsp;
+            <input type="checkbox" name="zjstatus" class="zjstatus" id="checkbox43" value="暂住证"/>暂住证&nbsp;&nbsp;
+            <input type="checkbox" name="zjstatus" class="zjstatus" id="checkbox44" value="上岗证֤"/>上岗证֤
+
         </td>
     </tr>
-    <tr>
+    <tr id="tr3">
         <td height="23" align="right" bgcolor="#FFFFFF">个人技能</td>
         <td colspan="4" bgcolor="#FFFFFF">
             <table width="100%" border="0" cellpadding="1" cellspacing="0" bgcolor="#bdc7d3" class="text_lb">
-                <tr>
-                    <td height="28" bgcolor="#FFFFFF"><input type="checkbox" name="checkbox6" id="checkbox71"/>照顾婴儿
+                <tr >
+                    <td height="28" bgcolor="#FFFFFF"><input type="checkbox" name="grskills" id="checkbox71" class="grskills" value="照顾婴儿"/>照顾婴儿
                         &nbsp;&nbsp;&nbsp;
-                        <input type="checkbox" name="checkbox6" id="checkbox72"/>带小孩 &nbsp;&nbsp;&nbsp;
-                        <input type="checkbox" name="checkbox6" id="checkbox73"/>照顾老人 &nbsp;&nbsp;&nbsp;
-                        <input type="checkbox" name="checkbox7" id="checkbox74"/>煮饭 &nbsp;&nbsp;&nbsp;
-                        <input type="checkbox" name="checkbox8" id="checkbox75"/>粤菜 &nbsp;&nbsp;&nbsp;
-                        <input type="checkbox" name="checkbox9" id="checkbox76"/>客家菜 &nbsp;&nbsp;&nbsp;
-                        <input type="checkbox" name="checkbox10" id="checkbox77"/>煲汤
+                        <input type="checkbox" name="grskills" id="checkbox72" class="grskills" value="带小孩"/>带小孩 &nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="grskills" id="checkbox73" class="grskills" value="照顾老人"/>照顾老人 &nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="grskills" id="checkbox74" class="grskills" value="煮饭"/>煮饭 &nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="grskills" id="checkbox75" class="grskills" value="粤菜"/>粤菜 &nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="grskills" id="checkbox76" class="grskills" value="客家菜"/>客家菜 &nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="grskills" id="checkbox77" class="grskills" value="煲汤"/>煲汤
                     </td>
                 </tr>
                 <tr>
-                    <td height="28" bgcolor="#FFFFFF"><input type="checkbox" name="checkbox6" id="checkbox81"/>扫地 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="checkbox" name="checkbox6" id="checkbox82"/>拖地 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="checkbox" name="checkbox6" id="checkbox83"/>擦窗&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="checkbox" name="checkbox7" id="checkbox84"/>洗衣 &nbsp;&nbsp;&nbsp;
-                        <input type="checkbox" name="checkbox8" id="checkbox85"/>打蜡 &nbsp;&nbsp;&nbsp;
-                        <input type="checkbox" name="checkbox9" id="checkbox86"/>通渠&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其他
-                        <input name="textarea26" type="text" id="textarea26" value="" size="30" class="pi"></td>
+                    <td height="28" bgcolor="#FFFFFF"><input type="checkbox" name="grskills" id="checkbox81" class="grskills" value="照顾婴儿"/>扫地 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="grskills" id="checkbox82" class="grskills" value="拖地"/>拖地 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="grskills" id="checkbox83" class="grskills" value="擦窗"/>擦窗&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="grskills" id="checkbox84" class="grskills" value="洗衣"/>洗衣 &nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="grskills" id="checkbox85" class="grskills" value="打蜡"/>打蜡 &nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="grskills" id="checkbox86" class="grskills" value="通渠"/>通渠&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其他
+                        <input name="grskills" type="text" id="textarea26" value="" size="30" class="pi">
+
+                    </td>
                 </tr>
             </table>
         </td>
@@ -149,10 +154,9 @@
 </table>
 <table width="96%" height="30" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
-        <td width="67%" align="center" class="text" nowrap><input type="submit" name="searchbtn3" value="检索"
-                                                                  class="button_new"
-                                                                  onClick="javascript:location.href='grxx.htm'">
-            <input type="submit" name="searchbtn3" value="返回" class="button_new"
+        <td width="67%" align="center" class="text" nowrap>
+            <input type="submit" name="searchbtn3" value="检索" class="button_new">
+            <input type="button" name="searchbtn3" value="返回" class="button_new"
                    onClick="javascript:location.href='grxx.htm'">
             <input type="hidden" name="mod" value="no">
             &nbsp;&nbsp;
@@ -161,4 +165,36 @@
 </table>
 </form>
 </body>
+<script>
+
+   /* $("#tr2").mouseleave(function () {
+        //意思是选择被选中的checkbox
+        var  check=new Array();
+        $.each($('.language:checked'), function () {
+            check.push($(this).val());
+        });
+        //window.alert("你选了：" + check);
+        document.getElementById("div1").innerHTML=check;
+        var zjstatusList=new Array();
+        $.each($('.zjstatus:checked'), function () {
+            zjstatusList.push($(this).val());
+        });
+        document.getElementById("div2").innerHTML=zjstatusList;
+
+        //意思是选择被选中的checkbox
+        var grskillsList=new Array();
+        $.each($('.grskills:checked'), function () {
+            grskillsList.push($(this).val());
+        });
+        document.getElementById("div3").innerHTML=grskillsList;
+    });*/
+    /*$("#tr3").mouseleave(function () {
+        //意思是选择被选中的checkbox
+        var zjstatusList=new Array();
+        $.each($('.grskills:checked'), function () {
+            zjstatusList.push($(this).val());
+        });
+        document.getElementById("div3").innerHTML=zjstatusList;
+    });*/
+</script>
 </html>

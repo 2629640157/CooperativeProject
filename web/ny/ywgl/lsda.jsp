@@ -72,7 +72,7 @@
 <table width="96%" height="65" border="0" align="center" cellpadding="0" cellspacing="0" class="MENU_line">
     <tr>
         <td width="67%" height="65" align="right" valign="top" nowrap class="text">&nbsp;&nbsp;
-            <div align="center"><span class="STYLE1">客户 ${employer.ename} 档案</span></div>
+            <div align="center"><span class="STYLE1">客户 ${deal.employer.ename} 档案</span></div>
             <div align="center" class="STYLE1"></div>
         </td>
     </tr>
@@ -81,8 +81,8 @@
 <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#bdc7d3">
     <tr align="center" class="td2" onmouseover="javascript:changeBgColorOnMouseOver(this);"
         onMouseOut="javascript:changeBgColorOnMouseOut(this);" onDblClick="doDBClick('bl.htm',true,'2');">
-        <td width="20%" height="14" align="right" nowrap><strong>客户号：${employer.eid}</strong></td>
-        <td width="53%" height="14" align="right" nowrap><strong>建档时间：${employer.ename}</strong></td>
+        <td width="20%" height="14" align="right" nowrap><strong>客户号：${deal.employer.eid}</strong></td>
+        <td width="53%" height="14" align="right" nowrap><strong>建档时间：${deal.employer.time}</strong></td>
         <td width="27%" align="center" nowrap>&nbsp;</td>
     </tr>
 </table>
@@ -91,17 +91,17 @@
         onMouseOut="javascript:changeBgColorOnMouseOut(this);" onDblClick="doDBClick('bl.htm',true,'2');">
         <td height="14" colspan="4" align="center" nowrap><strong>身份证号码 </strong></td>
         <td align="center" nowrap><strong>常住地址 </strong></td>
-        <td colspan="2" align="center" nowrap>&nbsp;${employer.address}</td>
+        <td colspan="2" align="center" nowrap>&nbsp;${deal.employer.address}</td>
         <td align="center" nowrap><strong>手机 </strong></td>
-        <td colspan="2" align="center" nowrap>&nbsp;${employer.cellphone}</td>
+        <td colspan="2" align="center" nowrap>&nbsp;${deal.employer.cellphone}</td>
     </tr>
     <tr align="center" class="td2" onmouseover="javascript:changeBgColorOnMouseOver(this);"
         onMouseOut="javascript:changeBgColorOnMouseOut(this);" onDblClick="doDBClick('bl.htm',true,'2');">
-        <td height="14" colspan="4" align="center" nowrap>${employer.idcard}</td>
+        <td height="14" colspan="4" align="center" nowrap>${deal.employer.idcard}</td>
         <td align="center" nowrap><strong>工人服务地址</strong></td>
-        <td colspan="2" align="center" nowrap>&nbsp;${employer.serviceaddress}</td>
+        <td colspan="2" align="center" nowrap>&nbsp;${deal.employer.serviceaddress}</td>
         <td align="center" nowrap><strong>电话</strong></td>
-        <td colspan="2" align="center" nowrap>&nbsp;${employer.phone}</td>
+        <td colspan="2" align="center" nowrap>&nbsp;${deal.employer.phone}</td>
     </tr>
     <tr align="center" class="tdtitle">
         <td nowrap align="center" width="3%">序号</td>

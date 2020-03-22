@@ -14,11 +14,15 @@ public class StringAndDateExchange {
     public static Date changeString(String dateStr) {
         Date date = null;
         try {
-            date = sdf.parse(dateStr);
+            if (dateStr.equals("")){
+                date=null;
+            }else {
+                date = sdf.parse(dateStr);
+            }
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        System.out.println(date);
+        //System.out.println(date);
         return date;
     }
 }

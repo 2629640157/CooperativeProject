@@ -14,13 +14,28 @@ public class Deal {
     private String status;
     private int salary;
     private String kinds;
-    private String introducefee;
+    private Integer introducefee;
     private Date submitdate;
     //2个外键
     private Employer employer;
     private Worker worker;
 
-    public Deal(int did, Employer employer, Worker worker, Date starttime, Date usefultime, String status, int salary, String kinds, String introducefee, Date submitdate) {
+    public Deal(Date starttime, Employer employer) {
+        this.starttime = starttime;
+        this.employer = employer;
+    }
+
+    public Deal(Date usefultime, String status, int salary, String kinds, Integer introducefee, Employer employer, Worker worker) {
+        this.usefultime = usefultime;
+        this.status = status;
+        this.salary = salary;
+        this.kinds = kinds;
+        this.introducefee = introducefee;
+        this.employer = employer;
+        this.worker = worker;
+    }
+
+    public Deal(int did, Employer employer, Worker worker, Date starttime, Date usefultime, String status, int salary, String kinds, Integer introducefee, Date submitdate) {
         this.did = did;
         this.employer = employer;
         this.worker = worker;
@@ -37,6 +52,12 @@ public class Deal {
         this.status = status;
         this.kinds = kinds;
         this.employer = employer;
+    }
+
+    public Deal(String status, Employer employer, Worker worker) {
+        this.status = status;
+        this.employer = employer;
+        this.worker = worker;
     }
 
     public Deal(Employer employer, Worker worker) {
@@ -92,11 +113,11 @@ public class Deal {
         this.kinds = kinds;
     }
 
-    public String getIntroducefee() {
+    public Integer getIntroducefee() {
         return introducefee;
     }
 
-    public void setIntroducefee(String introducefee) {
+    public void setIntroducefee(Integer introducefee) {
         this.introducefee = introducefee;
     }
 

@@ -49,7 +49,7 @@
             </select>
             <input type="button" name="searchbtn" value="��  ѯ" class="button_new">
             <input type="button" name="searchbtn2" value="��  ��" class="button_new"
-                   onClick="javascript:location.href='ddgl_xz.htm'">
+                   onClick="javascript:location.href='ddgl_xz.jsp'">
 
             &nbsp;&nbsp;
         </td>

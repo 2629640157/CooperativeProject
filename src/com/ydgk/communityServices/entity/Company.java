@@ -14,6 +14,10 @@ public class Company {
     public Company() {
     }
 
+    public Company(int cid) {
+        this.cid = cid;
+    }
+
     public Company(int cid, String caccount, String canme, String shuoming) {
         this.cid = cid;
         this.caccount = caccount;

@@ -42,4 +42,14 @@ public class dealServicesImpl implements dealServices {
     public int workerCounts(Deal deal, String start, String end) {
         return dealDao.workerCounts(deal,start,end);
     }
+
+    @Override
+    public boolean addDeals(Deal deal) {
+        return dealDao.addDeals(deal);
+    }
+
+    @Override
+    public boolean updateDeals(Deal deal) {
+        return dealDao.updateDeals(deal);
+    }
 }

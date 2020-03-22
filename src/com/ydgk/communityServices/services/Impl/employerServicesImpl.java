@@ -1,6 +1,7 @@
 package com.ydgk.communityServices.services.Impl;
 
 import com.ydgk.communityServices.dao.employerDao;
+import com.ydgk.communityServices.entity.Deal;
 import com.ydgk.communityServices.entity.Employer;
 import com.ydgk.communityServices.services.employerServices;
 
@@ -11,7 +12,7 @@ import com.ydgk.communityServices.services.employerServices;
 public class employerServicesImpl implements employerServices {
     employerDao employerDao=new employerDao();
     @Override
-    public Employer queryOneClearly(int did) {
+    public Deal queryOneClearly(int did) {
         return employerDao.queryOneClearly(did);
     }
 
