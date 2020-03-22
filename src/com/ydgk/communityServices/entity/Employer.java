@@ -113,6 +113,32 @@ public class Employer {
         this.brith = brith;
     }
 
+    public Employer(String ename, String esex, int eage, String nation, String nationplace, String education, String idcard, String workplace, String duty, String cellphone, String address, String hkaddress, String serviceaddress, String familyaddress, String familynumber, String content, String area, String habit, String other, int agent, float max_salary, float min_salary) {
+        this.ename = ename;
+        this.esex = esex;
+        this.eage = eage;
+        this.nation = nation;
+        this.nationplace = nationplace;
+        this.education = education;
+        this.idcard = idcard;
+        this.workplace = workplace;
+        this.duty = duty;
+        this.cellphone = cellphone;
+        this.address = address;
+        this.hkaddress = hkaddress;
+        this.serviceaddress = serviceaddress;
+        this.familyaddress = familyaddress;
+        this.familynumber = familynumber;
+        this.content = content;
+        this.area = area;
+        this.habit = habit;
+        this.other = other;
+        this.agent = agent;
+        this.max_salary = max_salary;
+        this.min_salary = min_salary;
+    }
+
+
 
 
     public int getEid() {
@@ -132,9 +158,6 @@ public class Employer {
         this.company = company;
     }
 
-    public void setAgent(int agent) {
-        this.agent = agent;
-    }
 
     public String getEname() {
         return ename;

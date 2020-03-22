@@ -23,4 +23,7 @@ public interface dealServices {
     List<Deal> queryWorkerDeals(Deal deal, Page page, String start, String end);
 
     int workerCounts(Deal deal, String start, String end);
+    boolean addDeals(Deal deal);
+
+    boolean updateDeals(Deal deal);
 }

@@ -1,5 +1,6 @@
 package com.ydgk.communityServices.services;
 
+import com.ydgk.communityServices.entity.Deal;
 import com.ydgk.communityServices.entity.Employer;
 
 /**
@@ -7,7 +8,7 @@ import com.ydgk.communityServices.entity.Employer;
  * @create 2020-03-15  10:42
  */
 public interface employerServices {
-    Employer queryOneClearly(int did);
+    Deal queryOneClearly(int did);
     boolean addEmployer(Employer employer);
     boolean updatedEmployer(Employer employer,int eid);
 }

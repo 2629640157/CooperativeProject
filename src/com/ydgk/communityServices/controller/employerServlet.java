@@ -1,5 +1,6 @@
 package com.ydgk.communityServices.controller;
 
+import com.ydgk.communityServices.entity.Deal;
 import com.ydgk.communityServices.entity.Employer;
 import com.ydgk.communityServices.services.Impl.employerServicesImpl;
 import com.ydgk.communityServices.services.employerServices;
@@ -110,9 +111,9 @@ public class employerServlet extends HttpServlet {
 
         String didStr = request.getParameter("did");
         int did = Integer.valueOf(didStr);
-        Employer employer = employerServices.queryOneClearly(did);
-        int eid = employer.getEid();
-        request.setAttribute("employer", employer);
+        Deal deal = employerServices.queryOneClearly(did);
+        int eid = deal.getEmployer().getEid();
+        request.setAttribute("deal", deal);
         request.setAttribute("eid",eid);
         try {
             request.getRequestDispatcher("gzxx_xg.jsp").forward(request, response);
@@ -133,8 +134,8 @@ public class employerServlet extends HttpServlet {
 
         String didStr = request.getParameter("did");
         int did = Integer.valueOf(didStr);
-        Employer employer = employerServices.queryOneClearly(did);
-        request.setAttribute("employer", employer);
+        Deal deal = employerServices.queryOneClearly(did);
+        request.setAttribute("deal", deal);
         try {
             request.getRequestDispatcher("gzxx_ck.jsp").forward(request, response);
         } catch (ServletException e) {
