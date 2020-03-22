@@ -110,33 +110,33 @@ public class workerDao extends BaseDao {
         conditionStr.add(languagesCondition);
         if (zjstatus!=null){
             for (int i = 0; i < zjstatus.length; i++) {
-                if (languages[languages.length-1].equals("")){
-                    if (zjstatus[i] != null && !zjstatus[i].equals("")) {
-                        if (i == zjstatus.length - 2) {
-                            zjstatusCondition = zjstatusCondition + " zjstatus like '%" + zjstatus[i] + "%'";
-                        } else {
-                            zjstatusCondition = zjstatusCondition + " zjstatus like '%" + zjstatus[i] + "%' and ";
-                        }
-                    }
-                }else {
-                    if (zjstatus[i] != null && !zjstatus[i].equals("")) {
-                        if (i == zjstatus.length - 2) {
-                            zjstatusCondition = zjstatusCondition + " zjstatus like '%" + zjstatus[i] + "%'";
-                        } else {
-                            zjstatusCondition = zjstatusCondition + " zjstatus like '%" + zjstatus[i] + "%' and ";
-                        }
+                if (zjstatus[i] != null && !zjstatus[i].equals("")) {
+                    if (i == zjstatus.length - 1) {
+                        zjstatusCondition = zjstatusCondition + " zjstatus like '%" + zjstatus[i] + "%'";
+                    } else {
+                        zjstatusCondition = zjstatusCondition + " zjstatus like '%" + zjstatus[i] + "%' and ";
                     }
                 }
             }
-            conditionStr.add(zjstatusCondition);
         }
-        for (int i = 0; i < grskills.length; i++) {
+        conditionStr.add(zjstatusCondition);
 
-            if (grskills[i] != null && !grskills[i].equals("")) {
-                if (i == grskills.length - 1) {
-                    grskillsCondition = grskillsCondition + " grskills like '%" + grskills[i] + "%'";
-                } else {
-                    grskillsCondition = grskillsCondition + " grskills like '%" + grskills[i] + "%' and";
+        for (int i = 0; i < grskills.length; i++) {
+            if (grskills[grskills.length-1].equals("")){
+                if (grskills[i] != null && !grskills[i].equals("")) {
+                    if (i == grskills.length - 2) {
+                        grskillsCondition = grskillsCondition + " grskills like '%" + grskills[i] + "%'";
+                    } else {
+                        grskillsCondition = grskillsCondition + " grskills like '%" + grskills[i] + "%' and";
+                    }
+                }
+            }else {
+                if (grskills[i] != null && !grskills[i].equals("")) {
+                    if (i == grskills.length - 1) {
+                        grskillsCondition = grskillsCondition + " grskills like '%" + grskills[i] + "%'";
+                    } else {
+                        grskillsCondition = grskillsCondition + " grskills like '%" + grskills[i] + "%' and";
+                    }
                 }
             }
         }

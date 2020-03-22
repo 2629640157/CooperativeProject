@@ -9,14 +9,13 @@ import java.util.Date;
  */
 public class CardRecord {
     private int record_id;
-    private int record_company_id;
     private float money;
     private Date Date_time;
     private int type;
 
-    public CardRecord(int record_id, int record_company_id, float money, Date date_time, int type) {
+    public CardRecord(int record_id,  float money, Date date_time, int type) {
         this.record_id = record_id;
-        this.record_company_id = record_company_id;
+
         this.money = money;
         Date_time = date_time;
         this.type = type;
@@ -31,14 +30,6 @@ public class CardRecord {
 
     public void setRecord_id(int record_id) {
         this.record_id = record_id;
-    }
-
-    public int getRecord_company_id() {
-        return record_company_id;
-    }
-
-    public void setRecord_company_id(int record_company_id) {
-        this.record_company_id = record_company_id;
     }
 
     public float getMoney() {
