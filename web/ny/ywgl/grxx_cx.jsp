@@ -167,7 +167,7 @@
 </body>
 <script>
 
-   /* $("#tr2").mouseleave(function () {
+    $("#tr2").mouseleave(function () {
         //意思是选择被选中的checkbox
         var  check=new Array();
         $.each($('.language:checked'), function () {
@@ -187,7 +187,7 @@
             grskillsList.push($(this).val());
         });
         document.getElementById("div3").innerHTML=grskillsList;
-    });*/
+    });
     /*$("#tr3").mouseleave(function () {
         //意思是选择被选中的checkbox
         var zjstatusList=new Array();

@@ -11,15 +11,14 @@ public class RechargeCard {
     private  int money_norm;
     private  int total_amount;
     private  int balance;
-    private  int top_company_id;
 
-    public RechargeCard(int card_id, int times, int money_norm, int total_amount, int balance, int top_company_id) {
+    public RechargeCard(int card_id, int times, int money_norm, int total_amount, int balance) {
         this.card_id = card_id;
         this.times = times;
         this.money_norm = money_norm;
         this.total_amount = total_amount;
         this.balance = balance;
-        this.top_company_id = top_company_id;
+
     }
 
     public RechargeCard() {
@@ -65,11 +64,5 @@ public class RechargeCard {
         this.balance = balance;
     }
 
-    public int getTop_company_id() {
-        return top_company_id;
-    }
 
-    public void setTop_company_id(int top_company_id) {
-        this.top_company_id = top_company_id;
-    }
 }

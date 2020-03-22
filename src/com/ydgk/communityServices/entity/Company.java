@@ -8,8 +8,13 @@ package com.ydgk.communityServices.entity;
 public class Company {
     private int cid;
     private String caccount;
-    private String canme;
+    private String cname;
     private String shuoming;
+    private Number number;//账号
+    private RechargeCard rechargeCard;//充值卡
+    private CardRecord cardRecord;//刷卡记录
+    private RechargeRecord rechargeRecord;//充值记录
+
 
     public Company() {
     }
@@ -18,10 +23,10 @@ public class Company {
         this.cid = cid;
     }
 
-    public Company(int cid, String caccount, String canme, String shuoming) {
+    public Company(int cid, String caccount, String cname, String shuoming) {
         this.cid = cid;
         this.caccount = caccount;
-        this.canme = canme;
+        this.cname = cname;
         this.shuoming = shuoming;
     }
 
@@ -41,12 +46,16 @@ public class Company {
         this.caccount = caccount;
     }
 
-    public String getCanme() {
-        return canme;
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        this.cname = cname;
     }
 
     public void setCanme(String canme) {
-        this.canme = canme;
+        this.cname = canme;
     }
 
     public String getShuoming() {
@@ -55,5 +64,37 @@ public class Company {
 
     public void setShuoming(String shuoming) {
         this.shuoming = shuoming;
+    }
+
+    public Number getNumber() {
+        return number;
+    }
+
+    public void setNumber(Number number) {
+        this.number = number;
+    }
+
+    public RechargeCard getRechargeCard() {
+        return rechargeCard;
+    }
+
+    public void setRechargeCard(RechargeCard rechargeCard) {
+        this.rechargeCard = rechargeCard;
+    }
+
+    public CardRecord getCardRecord() {
+        return cardRecord;
+    }
+
+    public void setCardRecord(CardRecord cardRecord) {
+        this.cardRecord = cardRecord;
+    }
+
+    public RechargeRecord getRechargeRecord() {
+        return rechargeRecord;
+    }
+
+    public void setRechargeRecord(RechargeRecord rechargeRecord) {
+        this.rechargeRecord = rechargeRecord;
     }
 }
