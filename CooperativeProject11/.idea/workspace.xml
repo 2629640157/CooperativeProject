@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CooperativeProject:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4ab82cd9-724c-4f54-8db0-5e7b8926ddd0" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/companyAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/tollAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/Impl/dealImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/ny/cwgl/bbcx.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/ny/cwgl/bbcxResult.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/ny/cwgl/chaxunResult.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/ny/xtgl/ddgl.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/ny/xtgl/gsglResult.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/ny/xtgl/gsgl_amend.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/cardRecordServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/companyServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/dateServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/dealServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/employerServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/informServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/messageServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/numberServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/rechargeCardServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/rechargeRecordServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/statusServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/workerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/consumeAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/BaseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/cardRecordDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/companyDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/dateDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/employerDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/informDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/messageDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/numberDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/rechargeCardDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/rechargeRecordDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/statusDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/workerDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/CardRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/CardRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Deal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Deal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Employer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Employer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/cardRecordServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/companyServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/dateServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/dealServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/dealServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/employerServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/informServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/messageServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/numberServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/rechargeCardServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/rechargeRecordServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/statusServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/services/workerServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ydgk/communityServices/util/JdbcUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ydgk/communityServices/util/JdbcUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/controller/companyServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/controller/dateServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/controller/dealServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/controller/employerServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/controller/informServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/controller/numberServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/controller/rechargeCardServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/controller/rechargeRecordServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/controller/workerServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/dao/BaseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/dao/BaseDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/dao/employerDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/entity/CardRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/entity/CardRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/entity/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/entity/Company.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/entity/Deal.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/entity/Deal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/entity/Employer.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/entity/Employer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/entity/Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/entity/Worker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/services/employerServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/util/JdbcUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/ydgk/communityServices/util/JdbcUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/ny/Menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/ny/Menu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/ny/cwgl/bbcx.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/ny/cwgl/menu_cwgl.htm" beforeDir="false" afterPath="$PROJECT_DIR$/web/ny/cwgl/menu_cwgl.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/ny/cwgl/sfgl.htm" beforeDir="false" afterPath="$PROJECT_DIR$/web/ny/cwgl/sfgl.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/ny/xtgl/gsgl.htm" beforeDir="false" afterPath="$PROJECT_DIR$/web/ny/xtgl/gsgl.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/ny/xtgl/gsgl_yl.htm" beforeDir="false" afterPath="$PROJECT_DIR$/web/ny/xtgl/gsgl_yl.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/ny/xtgl/menu_xtgl.htm" beforeDir="false" afterPath="$PROJECT_DIR$/web/ny/xtgl/menu_xtgl.jsp" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="dealServices.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/services/dealServices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="63" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="companyAdmin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/controller/companyAdmin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-173">
+              <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gsgl.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/ny/xtgl/gsgl.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="419">
+              <caret line="106" column="58" selection-start-line="106" selection-start-column="58" selection-end-line="106" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dealImp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/services/Impl/dealImp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="542">
+              <caret line="63" column="58" lean-forward="true" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="58" />
+              <folding>
+                <element signature="e#372#373#0" expanded="true" />
+                <element signature="e#435#436#0" expanded="true" />
+                <element signature="e#687#688#0" expanded="true" />
+                <element signature="e#765#766#0" expanded="true" />
+                <element signature="e#985#986#0" expanded="true" />
+                <element signature="e#1057#1058#0" expanded="true" />
+                <element signature="e#1642#1643#0" expanded="true" />
+                <element signature="e#1732#1733#0" expanded="true" />
+                <element signature="e#1963#1964#0" expanded="true" />
+                <element signature="e#2028#2029#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gsgl_amend.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/ny/xtgl/gsgl_amend.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dealDao.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/dao/dealDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="consumeAdmin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/controller/consumeAdmin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="725">
+              <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>gif</find>
+      <find>jpg</find>
+      <find>IMAGE</find>
+      <find>image</find>
+      <find>index</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>image</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/rechargeCardDao.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/rechargeRecordDao.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/statusDao.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/workerDao.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/workerServices.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/statusServices.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/messageServices.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/rechargeCardServices.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/numberServices.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/dateServices.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/compantServices.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/companyServices.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/informServices.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/cardRecordServices.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/rechargeRecordServices.java" />
+        <option value="$PROJECT_DIR$/src/jdbc.properties" />
+        <option value="$PROJECT_DIR$/web/ny/cwgl/sfgl.htm" />
+        <option value="$PROJECT_DIR$/web/ny/cwgl/bbcx.htm" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Employer.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Worker.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/util/JdbcUtil.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/employerServices.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/BaseDao.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Deal.java" />
+        <option value="$PROJECT_DIR$/web/ny/cwgl/sfgl_ck.htm" />
+        <option value="$PROJECT_DIR$/web/ny/cwgl/menu_cwgl.htm" />
+        <option value="$PROJECT_DIR$/web/ny/ywgl/ddgl.jsp" />
+        <option value="$PROJECT_DIR$/web/ny/cwgl/chaxunResult.jsp" />
+        <option value="$PROJECT_DIR$/web/ny/cwgl/sfgl.jsp" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/ChaXunGoods.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/consumeSvl.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/cardRecordDao.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/CardRecord.java" />
+        <option value="$PROJECT_DIR$/web/ny/cwgl/bbcxResult.jsp" />
+        <option value="$PROJECT_DIR$/web/ny/cwgl/menu_cwgl.jsp" />
+        <option value="$PROJECT_DIR$/web/ny/cwgl/bbcx.jsp" />
+        <option value="$PROJECT_DIR$/web/ny/xtgl/gsgl.htm" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Company.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/companyDao.java" />
+        <option value="$PROJECT_DIR$/web/ny/xtgl/gsglResult.jsp" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/tollAdmin.java" />
+        <option value="$PROJECT_DIR$/web/ny/Menu.jsp" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/consumeAdmin.java" />
+        <option value="$PROJECT_DIR$/web/ny/xtgl/menu_xtgl.htm" />
+        <option value="$PROJECT_DIR$/web/ny/xtgl/ddgl.jsp" />
+        <option value="$PROJECT_DIR$/web/ny/xtgl/gsgl_amend.jsp" />
+        <option value="$PROJECT_DIR$/web/ny/xtgl/gsgl.jsp" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/controller/companyAdmin.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/dealServices.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/services/Impl/dealImp.java" />
+        <option value="$PROJECT_DIR$/src/com/ydgk/communityServices/dao/dealDao.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-53" />
+    <option name="y" value="34" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CooperativeProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CooperativeProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CooperativeProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CooperativeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CooperativeProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CooperativeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="communityServices" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CooperativeProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CooperativeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="communityServices" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CooperativeProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CooperativeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="communityServices" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CooperativeProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CooperativeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="communityServices" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CooperativeProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CooperativeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="communityServices" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CooperativeProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CooperativeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="communityServices" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CooperativeProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CooperativeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CooperativeProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CooperativeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="ny" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CooperativeProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CooperativeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="ny" type="462c0819:PsiDirectoryNode" />
+              <item name="cwgl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CooperativeProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CooperativeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="ny" type="462c0819:PsiDirectoryNode" />
+              <item name="xtgl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CooperativeProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CooperativeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="ny" type="462c0819:PsiDirectoryNode" />
+              <item name="ywgl" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="E:/中间程序/CooperativeProject/CooperativeProject" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ydgk.communityServices.services" />
+      <recent name="com.ydgk.communityServices.dao" />
+      <recent name="com.ydgk.communityServices.controller" />
+      <recent name="com.ydgk.communityServices.filter" />
+      <recent name="com.ydgk.communityServices.util" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\CooperativeProject\web\ny\xtgl" />
+      <recent name="C:\CooperativeProject\web\ny\cwgl" />
+      <recent name="E:\JAVA IDEA program\CooperativeProject\src\com\ydgk\communityServices\entity" />
+      <recent name="E:\JAVA IDEA program\CooperativeProject\src\com\ydgk\communityServices\util" />
+      <recent name="E:\JAVA IDEA program\CooperativeProject\web" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.50">
+    <configuration name="JdbcUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ydgk.communityServices.util.JdbcUtil" />
+      <module name="CooperativeProject" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ydgk.communityServices.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="dealDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ydgk.communityServices.dao.dealDao" />
+      <module name="CooperativeProject" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ydgk.communityServices.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="Tomcat 8.5.50" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.50" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <deployment>
+        <artifact name="CooperativeProject:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_8_5_50_CooperativeProject" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="6719" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="CooperativeProject:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Tomcat 8.5.50" />
+      <item itemvalue="Application.JdbcUtil" />
+      <item itemvalue="Application.dealDao" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JdbcUtil" />
+        <item itemvalue="Application.dealDao" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4ab82cd9-724c-4f54-8db0-5e7b8926ddd0" name="Default" comment="" />
+      <created>1584089437751</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584089437751</updated>
+      <workItem from="1584089443144" duration="2277000" />
+      <workItem from="1584095769507" duration="1905000" />
+      <workItem from="1584105133289" duration="2375000" />
+      <workItem from="1584149767915" duration="4114000" />
+      <workItem from="1584173606913" duration="2856000" />
+      <workItem from="1584179700871" duration="6129000" />
+      <workItem from="1584191547551" duration="3443000" />
+      <workItem from="1584234003634" duration="9127000" />
+      <workItem from="1584250874335" duration="1145000" />
+      <workItem from="1584277968352" duration="1748000" />
+      <workItem from="1584319514924" duration="39270000" />
+      <workItem from="1584404293850" duration="3244000" />
+      <workItem from="1584492386841" duration="5231000" />
+      <workItem from="1584498272820" duration="38319000" />
+      <workItem from="1584578660890" duration="42500000" />
+      <workItem from="1584665865342" duration="26471000" />
+      <workItem from="1584751033328" duration="16189000" />
+    </task>
+    <task id="LOCAL-00001" summary="第一次提交">
+      <created>1584109534760</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584109534760</updated>
+    </task>
+    <task id="LOCAL-00002" summary="第二次提交（写了实体类和大致修改了页面）">
+      <created>1584176396348</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584176396349</updated>
+    </task>
+    <task id="LOCAL-00003" summary="第三次提交（写了servlet&#10;）">
+      <created>1584181670015</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584181670015</updated>
+    </task>
+    <task id="LOCAL-00004" summary="第四次提交（基础&#10;）">
+      <created>1584251929308</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584251929308</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="206343000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.3297587" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32903227" />
+      <window_info id="Structure" order="1" sideWeight="0.12984823" side_tool="true" weight="0.272361" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.383821" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.24784854" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info id="Image Layers" order="3" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32874355" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.801676" visible="true" weight="0.2700454" />
+      <window_info id="Web" order="6" sideWeight="0.19832402" side_tool="true" visible="true" weight="0.2700454" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32874355" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="第一次提交" />
+    <MESSAGE value="第二次提交（写了实体类和大致修改了页面）" />
+    <MESSAGE value="第三次提交（写了servlet&#10;）" />
+    <MESSAGE value="第四次提交（基础&#10;）" />
+    <option name="LAST_COMMIT_MESSAGE" value="第四次提交（基础&#10;）" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="287" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_221/src.zip!/java/net/DualStackPlainSocketImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="282" column="22" selection-start-line="282" selection-start-column="22" selection-end-line="282" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/dao/cardRecordDao.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/entity/CardRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="e#630#631#0" expanded="true" />
+            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#709#710#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Deal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/cwgl/chaxunResult.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/entity/Company.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/cwgl/bbcxResult.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="45" column="4" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/dao/companyDao.java" />
+    <entry file="file://$PROJECT_DIR$/web/ny/cwgl/sfgl.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1808">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/cwgl/menu_cwgl.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="112" column="152" lean-forward="true" selection-start-line="112" selection-start-column="73" selection-end-line="112" selection-end-column="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/cwgl/bbcx.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="96" column="8" lean-forward="true" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/ye.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-750" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/Top.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-525" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/space.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-431">
+          <caret line="12" column="52" lean-forward="true" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/Menu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100">
+          <caret line="47" column="47" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/rlzy/menu_rlzy.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1131" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/Body.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-825" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/MenuNew.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-567" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/Menu_oa.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2442" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/basedate_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-675" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/basedate_add.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-600" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/ck.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2100" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/czgl.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3600" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/fpqx.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1350" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/czgl_xz.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1642" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/gsgl_fl.htm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/gsgl_xz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1431" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/gsgl_zl.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2081" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/gxmm.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4500" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/jsxz.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4631" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/jsgl.htm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/Menu_xt.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3031" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/left_1b.htm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/services/companyServices.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/services/dateServices.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/services/cardRecordServices.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/services/employerServices.java" />
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/gsgl_yl.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-42" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/controller/tollAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/menu_xtgl.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2700">
+          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/gsglResult.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="35" column="66" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/ywgl/ddgl.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/ddgl.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/gsgl_amend.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/dao/BaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-625">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ny/xtgl/gsgl.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="106" column="58" selection-start-line="106" selection-start-column="58" selection-end-line="106" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/services/dealServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="63" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/controller/companyAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-173">
+          <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/controller/consumeAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/services/Impl/dealImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="63" column="58" lean-forward="true" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="58" />
+          <folding>
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#435#436#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
+            <element signature="e#765#766#0" expanded="true" />
+            <element signature="e#985#986#0" expanded="true" />
+            <element signature="e#1057#1058#0" expanded="true" />
+            <element signature="e#1642#1643#0" expanded="true" />
+            <element signature="e#1732#1733#0" expanded="true" />
+            <element signature="e#1963#1964#0" expanded="true" />
+            <element signature="e#2028#2029#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ydgk/communityServices/dao/dealDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>CooperativeProject:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>CooperativeProject</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

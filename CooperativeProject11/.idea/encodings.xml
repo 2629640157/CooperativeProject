@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/web/ny/css/edit.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/css/style.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/cwgl/chaxunResult.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/cwgl/sfgl.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/cwgl/sfgl_ck.htm" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/xtgl/basedate_add.htm" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/xtgl/basedate_list.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/xtgl/ck.htm" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/xtgl/czgl.htm" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/xtgl/czgl_xz.htm" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/xtgl/fpqx.htm" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/xtgl/gsgl.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/xtgl/gxmm.htm" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/xtgl/jsxz.htm" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/ny/ywgl/gzxx_ck.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/ny/ywgl/gzxx_xz.jsp" charset="UTF-8" />
+  </component>
+</project>
