@@ -12,6 +12,11 @@ public class Company {
     public Company() {
     }
 
+    public Company(int cid, String caccount) {
+        this.cid = cid;
+        this.caccount = caccount;
+    }
+
     public Company(String canme, String shuoming) {
         this.canme = canme;
         this.shuoming = shuoming;

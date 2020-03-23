@@ -224,21 +224,22 @@ public class dealDao {
         if (company.getCid() !=-1){
             sqlDate=" cid= "+company.getCid();
         }
-        if(company.getCaccount()!=null){
-            if (sqlDate.isEmpty()){
-                sqlDate=sqlDate+" caccount like '%"+ company.getCaccount()+"%'";
-            }else {
+        if(!company.getCaccount().trim().isEmpty()){
+           if (sqlDate.isEmpty()){
+               sqlDate=sqlDate+" caccount like '%"+ company.getCaccount()+"%'";
+           }else {
                 sqlDate=sqlDate+" and  caccount like '%"+ company.getCaccount()+"%'";
-            }
-        }
-        if(company.getCanme()!=null){
-            if (sqlDate.isEmpty()){
+          }
+      }
+      if(!company.getCanme().trim().isEmpty()){
+           if (sqlDate.isEmpty()){
                 sqlDate=sqlDate+" cname like '%"+ company.getCanme()+"%'";
-            }else {
+          }else {
                 sqlDate=sqlDate+" and  cname  like '%"+ company.getCanme()+"%'";
-            }
-        }
+           }
+       }
         sql=sql+ " where "+sqlDate;
+        System.out.println(sql);
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = JdbcUtil.getConnection();
@@ -325,23 +326,47 @@ public class dealDao {
 
     //系统管理下的公司管理的修改公司信息
     public boolean updatecompany(Company company) {
+            boolean result = false;
+            String sql = "insert into company(cid,caccount,cname) value(?,?,?)";
+            PreparedStatement ps = null;
+            Connection con = JdbcUtil.getConnection();
+            List<Company> companyList = new ArrayList<>();
+            try {
+                con.setAutoCommit(false);
+                ps = con.prepareStatement(sql);
+                dao.exeUpdate(con, ps,new Object[]{company.getCid(),company.getCaccount(), company.getCanme()});//得到结果集
+                con.commit();
+                result = true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                dao.closeAll(null, ps, con);
+            }
+            return result;
+        }
+
+
+
+
+
+
+    //系统管理下的添加
+    public boolean addAllcompany(Company company) {
         boolean result = false;
-        String sql = "update company set caccount=?,cname=? where cid=?";
+        String sql = "insert into company(cid,caccount,cname) value(?,?,?)";
         PreparedStatement ps = null;
-        ResultSet rs = null;
         Connection con = JdbcUtil.getConnection();
         List<Company> companyList = new ArrayList<>();
         try {
             con.setAutoCommit(false);
             ps = con.prepareStatement(sql);
-            dao.exeUpdate(con, ps,new Object[]{company.getCaccount(), company.getCanme()});//得到结果集
-            con.commit();
+            dao.exeUpdate(con, ps,new Object[]{company.getCid(),company.getCaccount(), company.getCanme()});//得到结果集
+              con.commit();
             result = true;
-
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            dao.closeAll(rs, ps, con);
+            dao.closeAll(null, ps, con);
         }
         return result;
     }
@@ -349,6 +374,82 @@ public class dealDao {
 
 
 
+
+    //系统管理下的删除
+    public boolean modAllcompany(Company company) {
+        boolean result = false;
+        String sql = "delete from company where cid =? and caccount=? and cname=?";
+        PreparedStatement ps = null;
+        Connection con = JdbcUtil.getConnection();
+        List<Company> companyList = new ArrayList<>();
+        try {
+            con.setAutoCommit(false);
+            ps = con.prepareStatement(sql);
+            dao.exeUpdate(con, ps,new Object[]{company.getCid(),company.getCaccount(), company.getCanme()});//得到结果集
+            con.commit();
+            result = true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dao.closeAll(null, ps, con);
+        }
+        return result;
+    }
+
+
+
+
+//数据字典下的分页和全查询
+    public List<Date> queryAllDate(int pageNow,int pageSize) {
+        String sql = "select date_id,date_name,date_class from date order by date_id limit ?,?";
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection con = JdbcUtil.getConnection();
+        List<Date> dateList = new ArrayList<>();
+        try {
+            ps = con.prepareStatement(sql);
+            rs = dao.exeQuery(con, ps, (pageNow-1)*pageSize,pageSize);//得到结果集
+            while (rs != null && rs.next()) {
+                Date dateBean=new Date();
+                dateBean.setDate_id(rs.getInt(1));
+                dateBean.setDate_name(rs.getString(2));
+                dateBean.setDate_class(rs.getString(3));
+
+                dateList.add(dateBean);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dao.closeAll(rs, ps, con);
+        }
+        return  dateList;
+    }
+
+
+
+
+    //数据字典下的总记录数
+       public int datefindTotalRecord() {
+        String sql = "select count(*) from date";
+        int result=0;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection con = JdbcUtil.getConnection();
+        try {
+            ps = con.prepareStatement(sql);
+            rs = dao.exeQuery(con, ps,null);//得到结果集
+            if (rs != null && rs.next()) {
+                result=rs.getInt(1);
+            }
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dao.closeAll(rs, ps, con);
+        }
+        return 0;
+    }
 
 
 

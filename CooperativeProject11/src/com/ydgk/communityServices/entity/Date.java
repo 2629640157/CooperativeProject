@@ -9,12 +9,18 @@ public class Date {
     private int date_id;
     private String date_name;
     private String date_remark;
-    private int date_class;
+    private String date_class;
+
+    public Date(int date_id, String date_name, String date_class) {
+        this.date_id = date_id;
+        this.date_name = date_name;
+        this.date_class = date_class;
+    }
 
     public Date() {
     }
 
-    public Date(int date_id, String date_name, String date_remark, int date_class) {
+    public Date(int date_id, String date_name, String date_remark, String date_class) {
         this.date_id = date_id;
         this.date_name = date_name;
         this.date_remark = date_remark;
@@ -45,11 +51,11 @@ public class Date {
         this.date_remark = date_remark;
     }
 
-    public int getDate_class() {
+    public String getDate_class() {
         return date_class;
     }
 
-    public void setDate_class(int date_class) {
+    public void setDate_class(String date_class) {
         this.date_class = date_class;
     }
 }

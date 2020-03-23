@@ -46,7 +46,7 @@ public class dealImp  implements dealServices {
 
     @Override
     public List<Company> querycompanyfenye(int pageNow, int pageSize) {
-        return dealdao.queryAllcompany(pageNow,pageSize);                           //系统管理下的公司管理的分页
+        return dealdao.queryAllcompany(pageNow,pageSize);                    //系统管理下的公司管理的分页
     }
 
     @Override
@@ -56,13 +56,28 @@ public class dealImp  implements dealServices {
 
     @Override
     public boolean modconpanyname(Company company) {
-        return dealdao.updatecompany(company);                                       //系统管理下的公司管理的修改公司信息
+        return dealdao.updatecompany(company);                      //系统管理下的公司管理的修改公司信息
     }
 
     @Override
-    public boolean deletecompany(int cid) {
+    public boolean deletecompany(Company company) {
         return false;                  //系统管理下的公司管理的删除公司信息
     }
 
+    @Override
+    public boolean addcom(Company company) {
+        return dealdao.addAllcompany(company);
+    }
+
+
+    @Override
+    public List<Date> querydate(int pageNow, int pageSize) {
+        return dealdao.queryAllDate(pageNow,pageNow);
+    }
+
+    @Override
+    public int findTotalDate() {
+        return dealdao.datefindTotalRecord() ;
+    }
 
 }
