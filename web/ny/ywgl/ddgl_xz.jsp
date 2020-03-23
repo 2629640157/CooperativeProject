@@ -276,7 +276,7 @@
             <input type="submit" name="searchbtn3" value="保  存" class="button_new"
                    onClick="javascript:alert('保存成功！');">
             <input type="button" name="searchbtn3" value="返  回" class="button_new"
-                   onClick="javascript:location.href='${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&pageNow=${pageNow}'">
+                   onClick="javascript:history.back();">
             <input type="hidden" name="mod" value="no">
             &nbsp;&nbsp;
         </td>

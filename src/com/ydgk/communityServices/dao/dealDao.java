@@ -1,8 +1,6 @@
 package com.ydgk.communityServices.dao;
 
-import com.ydgk.communityServices.entity.Deal;
-import com.ydgk.communityServices.entity.Employer;
-import com.ydgk.communityServices.entity.Worker;
+import com.ydgk.communityServices.entity.*;
 import com.ydgk.communityServices.util.JdbcUtil;
 import com.ydgk.communityServices.util.Page;
 
@@ -27,14 +25,14 @@ public class dealDao extends BaseDao {
             con.setAutoCommit(false);
             ps = con.prepareStatement(sql);
             Employer employer = deal.getEmployer();
-            bd.exeUpdate(con, ps, employer.getEname(), employer.getEsex(), employer.getEage(), employer.getNation(), employer.getNationplace(), employer.getEducation(), employer.getIdcard(),employer.getHkaddress(), employer.getCellphone(),   employer.getAddress(),employer.getDuty(), employer.getWorkplace(),employer.getMin_salary(),employer.getMax_salary(),   employer.getServiceaddress(), employer.getFamilyaddress(), employer.getFamilynumber(), employer.getContent(), employer.getArea(), employer.getHabit(), employer.getOther(),  employer.getAgent(),deal.getDid());
+            bd.exeUpdate(con, ps, employer.getEname(), employer.getEsex(), employer.getEage(), employer.getNation(), employer.getNationplace(), employer.getEducation(), employer.getIdcard(),employer.getHkaddress(), employer.getCellphone(),   employer.getAddress(),employer.getDuty(), employer.getWorkplace(),employer.getMin_salary(),employer.getMax_salary(),   employer.getServiceaddress(), employer.getFamilyaddress(), employer.getFamilynumber(), employer.getContent(), employer.getArea(), employer.getHabit(), employer.getOther(),  employer.getAgent(),employer.getEid());
             ps.close();
-            sql = "update worker set cid=?,wname=?,wsex=?,idcard=?,birth=?,hige=?,wage=?,phone=?,cellphone=?,wtype=?,worktime=?,defect=? where wid=?";
+            sql = "update worker set cid=?,wname=?,wsex=?,idcard=?,birth=?,hige=?,wage=?,phone=?,cellphone=?,type=?,worktime=?,defect=? where wid=?";
             ps = con.prepareStatement(sql);
             Worker worker= deal.getWorker();
             bd.exeUpdate(con,ps,worker.getCompany().getCid(),worker.getWname(),worker.getWsex(),worker.getIdcard(),worker.getBirth(),worker.getHige(),worker.getWage(),worker.getPhone(),worker.getSellphone(),worker.getKinds(),worker.getWorktime(),worker.getDefect(),worker.getWid());
             ps.close();
-            sql = "update deal set introducefee=?,dtype=?,salary=?,usefultime=?,`status`=? where did=?";
+            sql = "update deal set introducefee=?,kinds=?,salary=?,usefultime=?,`status`=? where did=?";
              ps = con.prepareStatement(sql);
              bd.exeUpdate(con,ps,deal.getIntroducefee(),deal.getKinds(),deal.getSalary(),deal.getUsefultime(),deal.getStatus(),deal.getDid());
             con.commit();
@@ -62,13 +60,13 @@ public class dealDao extends BaseDao {
             rs = ps.getGeneratedKeys();
             int eid=0;
             if (rs.next()) {
-                //封装服装编号,getInt(1)获取自增的主键
+                //getInt(1)获取自增的主键
                 eid = rs.getInt(1);
-                //封装到服装对象的cid里面
+                //封装到对象的cid里面
                 employer.setEid(eid);
             }
             ps.close();
-            sql = "insert into worker(cid,wname,wsex,idcard,birth,wage,phone,cellphone,wtype,worktime,defect)  values(?,?,?,?,?,?,?,?,?,?,?)";
+            sql = "insert into worker(cid,wname,wsex,idcard,birth,wage,phone,cellphone,type,worktime,defect)  values(?,?,?,?,?,?,?,?,?,?,?)";
             ps = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             Worker worker= deal.getWorker();
             bd.exeUpdate(con,ps,worker.getCompany().getCid(),worker.getWname(),worker.getWsex(),worker.getIdcard(),worker.getBirth(),worker.getWage(),worker.getPhone(),worker.getSellphone(),worker.getKinds(),worker.getWorktime(),worker.getDefect());
@@ -81,7 +79,7 @@ public class dealDao extends BaseDao {
                 worker.setWid(wid);
             }
             ps.close();
-            sql = "insert into deal(eid,wid,introducefee,dtype,salary,usefultime,`status`)  values(?,?,?,?,?,?,?)";
+            sql = "insert into deal(eid,wid,introducefee,kinds,salary,usefultime,`status`)  values(?,?,?,?,?,?,?)";
             ps = con.prepareStatement(sql);
             bd.exeUpdate(con,ps,eid,wid,deal.getIntroducefee(),deal.getKinds(),deal.getSalary(),deal.getUsefultime(),deal.getStatus());
             con.commit();
@@ -108,7 +106,7 @@ public class dealDao extends BaseDao {
         Connection con = JdbcUtil.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "  select d.did,e.eid,ename,e.phone,e.cellphone, w.wid,wname,w.phone,w.cellphone,salary,dtype,d.`status`,d.starttime  from worker w JOIN deal d on w.wid=d.wid join employer e on e.eid=d.eid" + condition +" order by d.did limit ?,?";
+        String sql = "  select d.did,e.eid,ename,e.phone,e.cellphone, w.wid,wname,w.phone,w.cellphone,salary,kinds,d.`status`,d.starttime  from worker w JOIN deal d on w.wid=d.wid join employer e on e.eid=d.eid" + condition +" order by d.did limit ?,?";
         try {
             ps = con.prepareStatement(sql);
             rs = bd.exeQuery(con, ps,(page.getPageNow()-1)*page.getPageSize(),page.getPageSize());
@@ -235,7 +233,7 @@ public class dealDao extends BaseDao {
         Connection con = JdbcUtil.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = " select  w.wid,wname,wsex,introducefee,d.starttime,worktime,dtype,salary,usefultime,time,w.cellphone  from worker w JOIN deal d on w.wid=d.wid join employer e on e.eid=d.eid WHERE e.eid=? limit ?,?";
+        String sql = " select  w.wid,wname,wsex,introducefee,d.starttime,worktime,kinds,salary,usefultime,time,w.cellphone  from worker w JOIN deal d on w.wid=d.wid join employer e on e.eid=d.eid WHERE e.eid=? limit ?,?";
         try {
             ps = con.prepareStatement(sql);
             rs = bd.exeQuery(con, ps,eid,(page.getPageNow()-1)*page.getPageSize(),page.getPageSize());
@@ -329,7 +327,7 @@ public class dealDao extends BaseDao {
         Connection con = JdbcUtil.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "SELECT d.did,ename,esex,eage,dtype,min_salary ,max_salary,`status`,submitdate FROM deal d JOIN employer e on d.eid=e.eid" + condition +" limit ?,?";
+        String sql = "SELECT d.did,ename,esex,eage,kinds,min_salary ,max_salary,`status`,submitdate FROM deal d JOIN employer e on d.eid=e.eid" + condition +" limit ?,?";
         try {
             ps = con.prepareStatement(sql);
             rs = bd.exeQuery(con, ps,(page.getPageNow()-1)*page.getPageSize(),page.getPageSize());
@@ -387,7 +385,7 @@ public class dealDao extends BaseDao {
             conditionStr.add(statusCondition);
         }
         if (deal.getStatus() != null && !deal.getKinds().equals("")) {
-            kindsCondition = " dtype ='" + deal.getKinds() + "'";
+            kindsCondition = " kinds ='" + deal.getKinds() + "'";
             conditionStr.add(kindsCondition);
         }
         if (conditionStr.size() > 0) {
@@ -401,4 +399,6 @@ public class dealDao extends BaseDao {
         }
         return condition;
     }
+
+
 }

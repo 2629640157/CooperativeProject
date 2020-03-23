@@ -27,6 +27,12 @@ public class Message {
         return word_id;
     }
 
+    public Message(String subject, String content, Date date_time) {
+        this.subject = subject;
+        this.content = content;
+        this.date_time = date_time;
+    }
+
     public void setWord_id(int word_id) {
         this.word_id = word_id;
     }

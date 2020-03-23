@@ -157,7 +157,7 @@
         <td width="67%" align="center" class="text" nowrap>
             <input type="submit" name="searchbtn3" value="检索" class="button_new">
             <input type="button" name="searchbtn3" value="返回" class="button_new"
-                   onClick="javascript:location.href='grxx.htm'">
+                   onClick="javascript:history.back();">
             <input type="hidden" name="mod" value="no">
             &nbsp;&nbsp;
         </td>

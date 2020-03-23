@@ -136,7 +136,7 @@
 <table width="96%" height="30" border="0" align="center" cellpadding="0" cellspacing="0" >
   <tr>
     <td width="67%" align="center" class="text" nowrap><input type="submit" name="searchbtn3" value="保  存" class="button_new" onClick="javascript:location.href='${pageContext.request.contextPath}/ny/ywgl/deal?type=query&pageNow=${pageNow}'">
-      <input type="submit" name="searchbtn3" value="返  回" class="button_new"onClick="javascript:location.href='${pageContext.request.contextPath}/ny/ywgl/deal?type=query&pageNow=${pageNow}'" >
+      <input type="submit" name="searchbtn3" value="返  回" class="button_new" onClick="javascript:history.back();" >
       <input type="hidden" name="mod" value="no">
       &nbsp;&nbsp; </td>
   </tr>

@@ -1,7 +1,8 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>无标题文档</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>鏃犳爣棰樻枃妗�</title>
 <style type="text/css">
 <!--
 body {
@@ -15,6 +16,6 @@ body {
 
 <body>
 <iframe id="quark_main" style="Z-INDEX: 1; VISIBILITY: inherit; WIDTH: 100%; HEIGHT:100%" name="right"
-          src="gsgl.htm" frameborder="0" scrolling="No"> </iframe>
+        src="gsgl.jsp" frameborder="0" scrolling="No"> </iframe>
 </body>
 </html>

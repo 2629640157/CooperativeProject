@@ -58,11 +58,16 @@
             <td width="10%" align="right" bgcolor="#FFFFFF">姓名：</td>
             <td width="13%" bgcolor="#FFFFFF"><input type="text" name="ename" value="${deal.employer.ename}"></td>
             <td width="12%" align="right" bgcolor="#FFFFFF">性别：</td>
-            <td width="17%" bgcolor="#FFFFFF"><input type="radio" name="esex" id="radio12"
-                                                     value="${deal.employer.esex}">
-                男
-                <input type="radio" name="esex" id="radio13" value="radio">
-                女
+            <td bgcolor="#FFFFFF">  <c:choose>
+                <c:when test="${deal.employer.esex=='男'}">
+                    <input type="radio" name="esex" checked="checked" value="男">男
+                    <input type="radio" name="esex" value="女">女
+                </c:when>
+                <c:otherwise>
+                    <input type="radio" name="esex" value="男">男
+                    <input type="radio" name="esex" checked="checked" value="女">女
+                </c:otherwise>
+            </c:choose>
             </td>
             <td width="10%" align="right" bgcolor="#FFFFFF">年龄：</td>
             <td width="13%" bgcolor="#FFFFFF"><input name="eage" type="text" value="${deal.employer.eage}" size="15"
@@ -189,12 +194,19 @@
                     <tr>
                         <td height="23" align="right" bgcolor="#FFFFFF">姓名：</td>
                         <td bgcolor="#FFFFFF"><input type="text" value="${deal.worker.wname}" name="wname"></td>
-                        <td align="right" bgcolor="#FFFFFF">性别：${deal.worker.wsex}</td>
-                        <td bgcolor="#FFFFFF"><input type="radio" name="wsex" id="radio" value="男">
-                            男
-                            <input type="radio" name="wsex" id="radio2" value="女">
-                            女
+                        <td align="right" bgcolor="#FFFFFF">性别：</td>
+                        <td bgcolor="#FFFFFF">  <c:choose>
+                            <c:when test="${deal.worker.wsex=='男'}">
+                                <input type="radio" name="wsex" checked="checked" value="男">男
+                                <input type="radio" name="wsex" value="女">女
+                            </c:when>
+                            <c:otherwise>
+                                <input type="radio" name="wsex" value="男">男
+                                <input type="radio" name="wsex" checked="checked" value="女">女
+                            </c:otherwise>
+                        </c:choose>
                         </td>
+
                     </tr>
                     <tr>
                         <td height="23" align="right" bgcolor="#FFFFFF">身份证号码：</td>
@@ -313,7 +325,7 @@
                                                                                   value="保  存" class="button_new"
                                                                                   onClick="javascript:alert('保存成功！');">
                 <input type="button" name="searchbtn3" value="返  回" class="button_new"
-                       onClick="javascript:location.href='ddgl.htm'">
+                       onClick="javascript:history.back();">
                 <input type="hidden" name="mod" value="no">
                 &nbsp;&nbsp;
             </td>

@@ -23,8 +23,13 @@ public class statusServicesImpl implements statusServices {
         return statusDao.queryStatus(sender,state,page);
     }
 
-    @Override
+  /*  @Override
     public List<Integer> querySenders() {
         return statusDao.querySenders();
+    }
+*/
+    @Override
+    public boolean addStatus(Status status) {
+        return statusDao.addStatus(status);
     }
 }

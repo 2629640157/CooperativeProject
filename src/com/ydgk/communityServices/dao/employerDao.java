@@ -28,14 +28,13 @@ public class employerDao extends BaseDao {
 
     public boolean updateEmployer(Employer employer, int eid) {
         boolean result = false;
-        Employer addEmployer = new Employer();
         Connection con = JdbcUtil.getConnection();
         PreparedStatement ps = null;
         String sql = "update employer set ename=?,esex=?,eage=?,nation=?,nativeplace=?,education=?,idcard=?,workplace=?,duty=?,htnumber=?,httime=?,phone=?,cellphone=?,address=?,hkaddress=?,serviceaddress=?,familyaddress=?,familynumber=?,content=?,area=?,habit=?,other=?,`require`=?,agent=?,time=? where eid=?";
         try {
             con.setAutoCommit(false);
             ps = con.prepareStatement(sql);
-            bd.exeUpdate(con, ps, employer.getEname(), employer.getEsex(), employer.getEage(), employer.getNation(), employer.getNationplace(),employer.getEducation(), employer.getIdcard(), employer.getWorkplace(), employer.getDuty(),employer.getHtnumber(), employer.getHttime(), employer.getPhone(), employer.getCellphone(), employer.getAddress(), employer.getHkaddress(), employer.getServiceaddress(), employer.getFamilyaddress(), employer.getFamilynumber(), employer.getContent(), employer.getArea(), employer.getHabit(), employer.getOther(), employer.getRequire(), employer.getTime(), employer.getAgent(), eid);
+            bd.exeUpdate(con, ps, employer.getEname(), employer.getEsex(), employer.getEage(), employer.getNation(), employer.getNationplace(),employer.getEducation(), employer.getIdcard(), employer.getWorkplace(), employer.getDuty(),employer.getHtnumber(), employer.getHttime(), employer.getPhone(), employer.getCellphone(), employer.getAddress(), employer.getHkaddress(), employer.getServiceaddress(), employer.getFamilyaddress(), employer.getFamilynumber(), employer.getContent(), employer.getArea(), employer.getHabit(), employer.getOther(), employer.getRequire(), employer.getAgent(), employer.getTime(), eid);
             con.commit();
             result = true;
         } catch (SQLException e) {
@@ -93,7 +92,7 @@ public class employerDao extends BaseDao {
         Connection con = JdbcUtil.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "select d. eid, ename, esex, eage, nation, nativeplace, education, w.idcard, hkaddress, w.phone, w.cellphone, w.address, duty, workplace, min_salary, max_salary, introducefee, dtype, serviceaddress, familyaddress, familynumber, content, area, habit, other,`require`,agent, d.starttime, usefultime, d.`status`, htnumber, httime, time, w.wid, w.cid, wname, wsex, w.idcard, birth, wage, hige, w.cellphone, w.phone, wtype, worktime, defect from employer e join deal d on e.eid = d.eid join worker w on w.wid = d.wid WHERE did = ?";
+        String sql = "select d. eid, ename, esex, eage, nation, nativeplace,e.education, w.idcard, hkaddress, w.phone, w.cellphone, w.address, duty, workplace, min_salary, max_salary, introducefee, kinds, serviceaddress, familyaddress, familynumber, content, area, habit, other,`require`,agent, d.starttime, usefultime, d.`status`, htnumber, httime, time, w.wid, w.cid, wname, wsex, w.idcard, birth, wage, hige, w.cellphone, w.phone, type, worktime, defect,salary from employer e join deal d on e.eid = d.eid join worker w on w.wid = d.wid WHERE did = ?";
         try {
             ps = con.prepareStatement(sql);
             rs = bd.exeQuery(con, ps, did);
@@ -148,6 +147,7 @@ public class employerDao extends BaseDao {
                 worker.setKinds(rs.getString(44));
                 worker.setWorktime(rs.getDate(45));
                 worker.setDefect(rs.getString(46));
+                deal.setSalary(rs.getInt(47));
                 deal.setWorker(worker);
                 deal.setEmployer(employer);
             }

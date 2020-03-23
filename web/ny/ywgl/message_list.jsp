@@ -14,7 +14,9 @@
                 document.forms[0].action = url;
                 document.forms[0].submit();
             }
-        }function goFirst() {
+        }
+
+        function goFirst() {
             window.location.href = "${pageContext.request.contextPath}/ny/ywgl/status?type=queryStatus&sender=${sender}&state=${state}";
         }
 
@@ -37,10 +39,11 @@
         function goLast() {
             window.location.href = "${pageContext.request.contextPath}/ny/ywgl/status?type=queryStatus&sender=${sender}&state=${state}&pageNow=${page.totalPages}";
         }
+
         function gotoPage() {
-          var pageNow=  document.getElementById("pageNow").value;
-          /*window.alert(pageNow)*/
-        window.location.href = "${pageContext.request.contextPath}/ny/ywgl/status?type=queryStatus&sender=${sender}&state=${state}&pageNow="+pageNow;
+            var pageNow = document.getElementById("pageNow").value;
+            /*window.alert(pageNow)*/
+            window.location.href = "${pageContext.request.contextPath}/ny/ywgl/status?type=queryStatus&sender=${sender}&state=${state}&pageNow=" + pageNow;
 
         }
     </script>
@@ -55,52 +58,55 @@
 <br/>
 <form action="${pageContext.request.contextPath}/ny/ywgl/status" method="post">
     <input type="hidden" name="type" value="queryStatus">
-<table width="96%" height="30" border="0" align="center" cellpadding="0" cellspacing="0" class="MENU_line">
-    <tr>
-        <td width="67%" align="right" class="text" nowrap> &nbsp;&nbsp;&nbsp; 发送人：
-            <select name="sender">
-              <%--  <c:forEach items="${senderList}" var="sender">--%>
-                <option value="1" >张三</option>
-                <option  value="2">李四</option>
-                <option value="3">王五</option>
-               <%-- </c:forEach>--%>
-            </select> &nbsp;&nbsp;&nbsp;
-            状态：
-            <select name="state">
-                <option value="1">已读</option>
-                <option value="0">未读</option>
-            </select>
-            <input type="submit" name="searchbtn" value="查询" class="button_new">
-            <input type="button" name="searchbtn2" value="新增" class="button_new"
-                   onClick="javascript:location.href='message_add.jsp'">
-            <input type="hidden" name="mod" value="no">
-            &nbsp;&nbsp;
-        </td>
-    </tr>
-</table>
+    <table width="96%" height="30" border="0" align="center" cellpadding="0" cellspacing="0" class="MENU_line">
+        <tr>
+            <td width="67%" align="right" class="text" nowrap> &nbsp;&nbsp;&nbsp; 发送人：
+                <select name="sender">
+                    <option>请选择</option>
+                    <option value="1" <c:if test="${'1' eq sender}">selected</c:if>>张三</option>
+                    <option value="2" <c:if test="${'2' eq sender}">selected</c:if>>李四</option>
+                    <option value="3" <c:if test="${'3' eq sender}">selected</c:if>>王五</option>
+
+                </select> &nbsp;&nbsp;&nbsp;
+                状态：
+                <select name="state">
+                    <option>请选择</option>
+                    <option value="1" <c:if test="${'1' eq state}">selected</c:if>>已读</option>
+                    <option value="0" <c:if test="${'0' eq state}">selected</c:if>>未读</option>
+                </select>
+                <input type="submit" name="searchbtn" value="查询" class="button_new">
+                <input type="button" name="searchbtn2" value="新增" class="button_new"
+                       onClick="javascript:location.href='${pageContext.request.contextPath}/ny/ywgl/status?type=toAddStatus'">
+                <input type="hidden" name="mod" value="no">
+                &nbsp;&nbsp;
+            </td>
+        </tr>
+    </table>
 </form>
 <br>
 <table width="96%" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#bdc7d3">
     <tr align="center" class="tdtitle">
         <td nowrap align="center" width="6%">序号</td>
-        <td width="31%" align="center" nowrap >标题</td>
-        <td width="38%" align="center" nowrap >发送人</td>
-        <td width="38%" align="center" nowrap >状态</td>
+        <td width="31%" align="center" nowrap>标题</td>
+        <td width="38%" align="center" nowrap>发送人</td>
+        <td width="38%" align="center" nowrap>状态</td>
         <td width="38%" height="24" align="center" nowrap id=".name">
             <div align="center" orderBy="true">发送时间</div>
         </td>
         <td width="21%" align="center" nowrap id=".submit_date"><strong>操作</strong></td>
     </tr>
-    <c:forEach var="status" items="${statusList}" >
-    <tr align="center" class="td2" onmouseover="javascript:changeBgColorOnMouseOver(this);"
-        onMouseOut="javascript:changeBgColorOnMouseOut(this);" onDblClick="doDBClick('bl.htm',true,'2');">
-        <td nowrap align="center" width="6%">${status.id}</td>
-        <td align="center" nowrap><a href="message_show.html">${status.message.subject}</a></td>
-        <td align="center" nowrap>${status.sender}</td>
-        <td align="center" nowrap> ${status.state}</td>
-        <td height="14" align="center" nowrap>${status.message.date_time}</td>
-        <td align="center" nowrap><a href="message_add.jsp">回复</a>&nbsp;</td>
-    </tr>
+    <c:forEach var="status" items="${statusList}">
+        <tr align="center" class="td2" onmouseover="javascript:changeBgColorOnMouseOver(this);"
+            onMouseOut="javascript:changeBgColorOnMouseOut(this);" onDblClick="doDBClick('bl.htm',true,'2');">
+            <td nowrap align="center" width="6%">${status.id}</td>
+            <td align="center" nowrap><a href="message_show.html">${status.message.subject}</a></td>
+            <td align="center" nowrap><c:if test="${status.sender==1}">张三</c:if><c:if
+                    test="${status.sender==2}">李四</c:if><c:if test="${status.sender==3}">王五</c:if></td>
+            <td align="center" nowrap><c:if test="${status.state==0}">未读</c:if> <c:if
+                    test="${status.state==1}">已读</c:if></td>
+            <td height="14" align="center" nowrap>${status.message.date_time}</td>
+            <td align="center" nowrap><a href="${pageContext.request.contextPath}/ny/ywgl/status?type=toAddStatus">回复</a>&nbsp;</td>
+        </tr>
     </c:forEach>
 </table>
 <table width="91%" height="10" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -117,10 +123,11 @@
                              onclick="goPrevious()">&nbsp;&nbsp;&nbsp;
                         <img src="../image/Next_no.gif" alt="下一页" width="14" height="13" border="0" onclick="goNext()">&nbsp;&nbsp;&nbsp;
                         <img src="../image/Last_no.gif" alt="尾页" width="18" height="13" border="0" onclick="goLast()">&nbsp;&nbsp;&nbsp;
-                      <%--  <a href="javascript:this.document.AwaitForm.submit()" oncontextmenu="return false" onClick="if(this.document.AwaitForm.pageSelect.value==''){ alert('页码必须输入');return false;}
- else {this.document.AwaitForm.paginationAction.value='gotoPage';}">前往</a>--%>
+                        <%--  <a href="javascript:this.document.AwaitForm.submit()" oncontextmenu="return false" onClick="if(this.document.AwaitForm.pageSelect.value==''){ alert('页码必须输入');return false;}
+   else {this.document.AwaitForm.paginationAction.value='gotoPage';}">前往</a>--%>
                         <a href="javascript:gotoPage()">前往</a>
-                        <input type=text size='4' onlytype='int' id="pageNow" onfocus='checkTextBoxInput()' name='pageSelect' value=''/>
+                        <input type=text size='4' onlytype='int' id="pageNow" onfocus='checkTextBoxInput()'
+                               name='pageSelect' value=''/>
                         页
                     </td>
                 </tr>

@@ -12,6 +12,7 @@ import java.util.List;
 public interface statusServices {
     int StatusCounts(int sender, int state);
     List<Status> queryStatus(int sender, int state, Page page);
-    List<Integer> querySenders();
+    //List<Integer> querySenders();
+    boolean addStatus(Status status);
 
 }

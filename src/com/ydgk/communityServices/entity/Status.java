@@ -17,6 +17,12 @@ public class Status {
     public Status() {
     }
 
+    public Status(Integer sender, int state, Message message) {
+        this.sender = sender;
+        this.state = state;
+        this.message = message;
+    }
+
     public Status(int id, Integer sender, int accept, int state, Message message) {
         this.id = id;
         this.sender = sender;

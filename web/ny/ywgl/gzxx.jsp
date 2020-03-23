@@ -58,24 +58,35 @@
             <td width="67%" align="right" class="text" nowrap>&nbsp; 姓名：
                 <input type="text" name="ename" maxlength="20" size="12" value="${deal.employer.ename}" class="input">
                 &nbsp;&nbsp;性别：
-                <input type="radio" name="esex" id="radio" value="男">
-                男
-                <input type="radio" name="esex" id="radio2" value="女">
-                女 &nbsp;&nbsp; 电话：
+                <c:choose>
+                    <c:when test="${deal.employer.esex=='女'}">
+                        <input type="radio" name="esex"  value="男">男
+                        <input type="radio" name="esex" value="女" checked="checked">女
+                    </c:when>
+                    <c:when test="${deal.employer.esex=='男'}">
+                        <input type="radio" name="esex" checked="checked" value="男">男
+                        <input type="radio" name="esex" value="女">女
+                    </c:when>
+                    <c:otherwise>
+                        <input type="radio" name="esex" value="男">男
+                        <input type="radio" name="esex"  value="女">女
+                    </c:otherwise>
+                </c:choose>
+               &nbsp;&nbsp; 电话：
                 <input type="text" name="phone" maxlength="20" size="12" value="${deal.employer.phone}" class="input">
                 状态：
-                <select name="status" id="select" class="input" value="${deal.status}">
+                <select name="status" id="select" class="input" >
                     <option value="" selected>请选择</option>
-                    <option>未雇佣</option>
-                    <option>雇佣</option>
+                    <option value="未雇佣" <c:if test="${'未雇佣' eq deal.status}">selected</c:if>>未雇佣</option>
+                    <option  value="雇佣" <c:if test="${'雇佣' eq deal.status}">selected</c:if>>雇佣</option>
                 </select>
                 雇用职位：
                 <select name="kinds" id="select2" class="input" value="${deal.kinds}">
                     <option selected>请选择</option>
-                    <option> 保姆</option>
-                    <option>月嫂</option>
-                    <option>家教</option>
-                    <option> 钟点工</option>
+                    <option value="保姆" <c:if test="${'保姆' eq deal.kinds}">selected</c:if>> 保姆</option>
+                    <option value="月嫂" <c:if test="${'月嫂' eq deal.kinds}">selected</c:if>>月嫂</option>
+                    <option value="家教" <c:if test="${'家教' eq deal.kinds}">selected</c:if>>家教</option>
+                    <option value="钟点工" <c:if test="${'钟点工' eq deal.kinds}">selected</c:if>> 钟点工</option>
                 </select>
                 <input type="submit" value="查询" class="button_new">
                 <input type="button" name="searchbtn2" value="新增" class="button_new"
