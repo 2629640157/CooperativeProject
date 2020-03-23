@@ -111,7 +111,7 @@
         <td align="center" nowrap>${deal.kinds}</td>
         <td align="center" nowrap>${deal.status}</td>
         <td align="center" nowrap><a href="${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkersClear&pageNow=${page.pageNow}&did=${deal.did}">查看
-        </a> <a href="${pageContext.request.contextPath}/ny/ywgl/deal?type=toUpdateWorker&pageNow=${page.pageNow}&did=${deal.did}">修改</a></td>
+        </a> <a href="${pageContext.request.contextPath}/ny/ywgl/deal?type=toUpdateWorker&pageNow=${page.pageNow}&did=${deal.did}&eid=${deal.employer.eid}">修改</a></td>
     </tr>
     </c:forEach>
 </table>

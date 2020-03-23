@@ -67,8 +67,15 @@ public class dealServlet extends HttpServlet {
         request.setAttribute("pageNow", pageNow);
         String didStr = request.getParameter("did");
         int did = Integer.valueOf(didStr);
+        String eidStr = request.getParameter("eid");
+        int eid = Integer.valueOf(eidStr);
         Deal deal = employerServices.queryOneClearly(did);
+        String kinds = deal.getKinds();
+        String[] split = kinds.split(",");
         request.setAttribute("deal", deal);
+        request.setAttribute("did", did);
+        request.setAttribute("eid", eid);
+        request.setAttribute("split", split);
         try {
             request.getRequestDispatcher("ddgl_xg.jsp").forward(request, response);
         } catch (ServletException e) {
@@ -80,7 +87,14 @@ public class dealServlet extends HttpServlet {
 
     //修改员工
     private void updateWorker(HttpServletRequest request, HttpServletResponse response) {
+
+        String didStr = request.getParameter("did");
+        Integer did=Integer.valueOf(didStr);
+        String eidStr = request.getParameter("eid");
+        Integer eid=Integer.valueOf(didStr);
         Deal deal = getDeal(request, response);
+        deal.setDid(did);
+        deal.getEmployer().setEid(eid);
         String pageNowStr = request.getParameter("pageNow");
         int pageNow = 1;
         if (pageNowStr != null && !pageNowStr.equals("")) {
@@ -158,7 +172,7 @@ public class dealServlet extends HttpServlet {
         Integer eage = Integer.valueOf(eageStr);
         String nation = request.getParameter("nation");
         String nationplace = request.getParameter("nativeplace");
-        String education = request.getParameter("education");
+        String eeducation = request.getParameter("eeducation");
         String eidcard = request.getParameter("eidcard");
         String hkaddress = request.getParameter("hkaddress");
         String cellphone = request.getParameter("cellphone");
@@ -198,17 +212,22 @@ public class dealServlet extends HttpServlet {
         String worktimeStr = request.getParameter("worktime");
         Date worktime = StringAndDateExchange.changeString(worktimeStr);
         String defect = request.getParameter("defect");
-        String divdkinds = request.getParameter("divdkinds");
-        String dkindstext = request.getParameter("dkindstext");
-        if (divdkinds != null && !dkindstext.equals("")) {
-            divdkinds = divdkinds + "," + dkindstext;
-        } else {
-            if (divdkinds == null) {
-                divdkinds=dkindstext;
-            } else {
-                divdkinds = divdkinds + dkindstext;
+        //String weducation = request.getParameter("weducation");
+        String[] dkinds = request.getParameterValues("dkinds");
+        String divdkinds="";
+        if (dkinds!=null&&!dkinds[0].equals("")){
+            for (int i = 0; i <dkinds.length-1 ; i++) {
+                if (i==0){
+                    divdkinds=dkinds[0];
+                }else {
+                    divdkinds=divdkinds+","+dkinds[i];
+                }
+            }
+            if (!dkinds[dkinds.length-1].equals("")){
+                divdkinds=divdkinds+","+dkinds[dkinds.length-1];
             }
         }
+
         String agentStr = request.getParameter("agent");
         Integer agent = Integer.valueOf(agentStr);
         String salaryStr = request.getParameter("salary");
@@ -216,7 +235,7 @@ public class dealServlet extends HttpServlet {
         String usefultimeStr = request.getParameter("usefultime");
         Date usefultime = StringAndDateExchange.changeString(usefultimeStr);
         String status = request.getParameter("status");
-        Employer employer = new Employer(ename, esex, eage, nation, nationplace, education, eidcard, workplace, duty, cellphone, address, hkaddress, serviceaddress, familyaddress, familynumber, content, area, habit, other, agent, max_salary, min_salary);
+        Employer employer = new Employer(ename, esex, eage, nation, nationplace, eeducation, eidcard, workplace, duty, cellphone, address, hkaddress, serviceaddress, familyaddress, familynumber, content, area, habit, other, agent, max_salary, min_salary);
         Company company = new Company(cid);
         Worker worker = new Worker(wid, wname, wsex, widcard, birth, wage, hige, sellphone, phone, wkinds, worktime, defect, company);
         Deal deal = new Deal(usefultime, status, salary, divdkinds, introducefee, employer, worker);

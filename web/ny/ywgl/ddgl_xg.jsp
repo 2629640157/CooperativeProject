@@ -53,12 +53,14 @@
 <form action="${pageContext.request.contextPath}/ny/ywgl/deal" method="post">
     <input type="hidden" name="type" value="updateWorker">
     <input type="hidden" name="pageNow" value="${pageNow}"/>
+    <input type="hidden" name="did" value="${did}"/>
+    <input type="hidden" name="eid" value="${eid}"/>
     <table width="94%" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#bdc7d3" class="text_lb">
         <tr>
             <td width="10%" align="right" bgcolor="#FFFFFF">姓名：</td>
             <td width="13%" bgcolor="#FFFFFF"><input type="text" name="ename" value="${deal.employer.ename}"></td>
             <td width="12%" align="right" bgcolor="#FFFFFF">性别：</td>
-            <td bgcolor="#FFFFFF">  <c:choose>
+            <td bgcolor="#FFFFFF"><c:choose>
                 <c:when test="${deal.employer.esex=='男'}">
                     <input type="radio" name="esex" checked="checked" value="男">男
                     <input type="radio" name="esex" value="女">女
@@ -195,7 +197,7 @@
                         <td height="23" align="right" bgcolor="#FFFFFF">姓名：</td>
                         <td bgcolor="#FFFFFF"><input type="text" value="${deal.worker.wname}" name="wname"></td>
                         <td align="right" bgcolor="#FFFFFF">性别：</td>
-                        <td bgcolor="#FFFFFF">  <c:choose>
+                        <td bgcolor="#FFFFFF"><c:choose>
                             <c:when test="${deal.worker.wsex=='男'}">
                                 <input type="radio" name="wsex" checked="checked" value="男">男
                                 <input type="radio" name="wsex" value="女">女
@@ -265,36 +267,54 @@
                 </table>
             </td>
         </tr>
-       <%-- ${deal.kinds}--%>
-        <tr id="tr1" >
+        <%-- ${deal.kinds}--%>
+        <tr id="tr1">
             <td align="right" nowrap bgcolor="#FFFFFF">雇用类型：</td>
-            <td colspan="7" bgcolor="#FFFFFF"><input type="checkbox" name="dkinds" value="月嫂"/>
-                月嫂
-                &nbsp;
-                <input type="checkbox" name="dkinds" value="保姆"/>
+            <td colspan="7" bgcolor="#FFFFFF">
+                <input type="checkbox" name="dkinds" <c:forEach var="kind" items="${split}">
+                    <c:if test="${kind == '月嫂'}"> checked</c:if>
+                </c:forEach> value="月嫂"/>
+                月嫂&nbsp;
+                <input type="checkbox" name="dkinds" <c:forEach var="kind" items="${split}">
+                    <c:if test="${kind == '保姆'}"> checked</c:if>
+                </c:forEach> value="保姆"/>
                 保姆&nbsp;&nbsp;
-                <input type="checkbox" name="dkinds" value="钟点"/>
+                <input type="checkbox" name="dkinds" <c:forEach var="kind" items="${split}">
+                    <c:if test="${kind == '钟点'}"> checked</c:if>
+                </c:forEach> value="钟点"/>
                 钟点&nbsp;&nbsp;
-                <input type="checkbox" name="dkinsd"value="厨嫂" id="checkbox4"/>
+                <input type="checkbox" name="dkinsd" <c:forEach var="kind" items="${split}">
+                    <c:if test="${kind == '厨嫂'}"> checked</c:if>
+                </c:forEach> value="厨嫂" id="checkbox4"/>
                 厨嫂
-                <input type="checkbox" name="dkinds"value="清洁工" />
+                <input type="checkbox" name="dkinds"  <c:forEach var="kind" items="${split}">
+                    <c:if test="${kind == '清洁工'}"> checked</c:if>
+                </c:forEach>value="清洁工"/>
                 清洁工
                 &nbsp;
-                <input type="checkbox" name="dkinds" value="护工"/>
+                <input type="checkbox" name="dkinds" <c:forEach var="kind" items="${split}">
+                    <c:if test="${kind == '护工'}"> checked</c:if>
+                </c:forEach> value="护工"/>
                 护工&nbsp;&nbsp;
-                <input type="checkbox" name="dkinds" value="早教"/>
+                <input type="checkbox" name="dkinds" <c:forEach var="kind" items="${split}">
+                    <c:if test="${kind == '早教'}"> checked</c:if>
+                </c:forEach> value="早教"/>
                 早教
                 &nbsp;&nbsp;
-                <input type="checkbox" name="dkinds" value="家教"/>
+                <input type="checkbox" name="dkinds"  <c:forEach var="kind" items="${split}">
+                    <c:if test="${kind == '家教'}"> checked</c:if>
+                </c:forEach>value="家教"/>
                 家教
                 &nbsp;&nbsp;
-                <input type="checkbox" name="dkinds" id="checkbox2" value="高级管家"/>
+                <input type="checkbox" name="dkinds" id="checkbox2"  <c:forEach var="kind" items="${split}">
+                    <c:if test="${kind == '高级管家'}"> checked</c:if>
+                </c:forEach>value="高级管家"/>
                 高级管家<br>
                 备注：
-                <input name="dkindstext" type="text" id="textarea9" value="" size="40" class="pi">
-                <select name="divdkinds" hidden >
+                <input name="dkinds" type="text" id="textarea9" value="" size="40" class="pi">
+                <%--<select name="divdkinds" hidden >
                     <option id="div2" selected></option>
-                </select>
+                </select>--%>
         </tr>
         <tr>
             <td align="right" colspan="8" height="33" nowrap bgcolor="#FFFFFF"></td>
@@ -334,17 +354,17 @@
 </form>
 </body>
 <script>
-    var check ="";
-    //$('input:checkbox:checked') 等同于 $('input[type=checkbox]:checked')
-    $("#tr1").mouseleave(function () {
-        //意思是选择被选中的checkbox
-        check=new Array()
-        $.each($('input:checkbox:checked'), function () {
-            check.push($(this).val());
+    /*   var check ="";
+       //$('input:checkbox:checked') 等同于 $('input[type=checkbox]:checked')
+       $("#tr1").mouseleave(function () {
+           //意思是选择被选中的checkbox
+           check=new Array()
+           $.each($('input:checkbox:checked'), function () {
+               check.push($(this).val());
 
-        });
-        //window.alert("你选了：" + check);
-        document.getElementById("div2").innerHTML=check;
-    });
+           });
+           //window.alert("你选了：" + check);
+           document.getElementById("div2").innerHTML=check;
+       });*/
 </script>
 </html>

@@ -193,7 +193,7 @@ public class dealDao extends BaseDao {
             conditionStr.add(endCondition);
         }
         if (deal.getWorker().getWname() != null && !deal.getWorker().getWname().equals("")) {
-            wnameCondition = " ename like '%" + deal.getWorker().getWname()  + "%'";
+            wnameCondition = " wname like '%" + deal.getWorker().getWname()  + "%'";
             conditionStr.add(wnameCondition);
         }
         if (deal.getStatus() != null && !deal.getStatus().equals("")) {
@@ -377,15 +377,15 @@ public class dealDao extends BaseDao {
             conditionStr.add(esexCondition);
         }
         if (deal.getEmployer().getPhone() != null && !deal.getEmployer().getPhone().equals("")) {
-            phoneCondition = " phone = '" + deal.getEmployer().getPhone() + "'";
+            phoneCondition = " phone like '%" + deal.getEmployer().getPhone() + "%'";
             conditionStr.add(phoneCondition);
         }
         if (deal.getStatus() != null && !deal.getStatus().equals("")) {
             statusCondition = " `status` = '" + deal.getStatus() + "'";
             conditionStr.add(statusCondition);
         }
-        if (deal.getStatus() != null && !deal.getKinds().equals("")) {
-            kindsCondition = " kinds ='" + deal.getKinds() + "'";
+        if (deal.getKinds() != null && !deal.getKinds().equals("")) {
+            kindsCondition = " kinds like '%" + deal.getKinds() + "%'";
             conditionStr.add(kindsCondition);
         }
         if (conditionStr.size() > 0) {
