@@ -63,7 +63,7 @@ function doDBClick(url,operator,type) {
               <td align="center" nowrap>${deal.submitdate}</td>
               <td align="center" nowrap>${deal.worker.wname}</td>
               <td align="center" nowrap>${deal.company.canme}</td>
-              <td align="center" nowrap><a href="yggl_xg.htm">查看订单</a></td>
+              <td align="center" nowrap><a href="bbcx.jsp">查看订单</a></td>
           </tr>
       </c:forEach>
 

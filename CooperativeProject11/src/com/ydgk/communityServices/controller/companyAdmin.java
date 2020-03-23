@@ -4,6 +4,11 @@ import com.ydgk.communityServices.entity.Company;
 import com.ydgk.communityServices.entity.Deal;
 import com.ydgk.communityServices.services.Impl.dealImp;
 import com.ydgk.communityServices.services.dealServices;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.ProgressListener;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
@@ -11,18 +16,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.util.Iterator;
 import java.util.List;
 
 @WebServlet(value ="/ny/xtgl/companyAdmin",initParams = @WebInitParam(name="pageSize",value = "3"))
 public class companyAdmin extends HttpServlet {
     private dealServices dealservices=new dealImp();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        doGet(request, response);
+         request.setCharacterEncoding("UTF-8");
+         doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String reqType= request.getParameter("reqType");
         if (reqType.equals("querycompanyname")){
             querycompanyname(request, response);
@@ -30,16 +39,42 @@ public class companyAdmin extends HttpServlet {
             companyfenye(request, response);
         }else if (reqType.equals("xiugai")){
             xiugaicompany(request, response);
-        }else if (reqType.equals("delete")){
-          deletecompany(request, response);
+        }
+        else if (reqType.equals("delete")){
+          deletecompany(request, response);}
+        else if (reqType.equals("addxinxi")){
+            try {
+                addcompany(request,response);
+            } catch (FileUploadException e) {
+                e.printStackTrace();
+            }
         }
 
     }
-    //系统管理下的公司管理的删除公司信息
-    private void deletecompany(HttpServletRequest request, HttpServletResponse response) {
+
+       //添加信息
+    private void addcompany(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, FileUploadException {
         int cid=Integer.valueOf(request.getParameter("cid"));
+        String caccount=request.getParameter("caccount");
+        String canme1=request.getParameter("canme");
+        String canme=new String(canme1.getBytes("iso-8859-1"),"UTF-8");
+
+        Company company=new Company(cid,caccount,canme);
+         boolean result=dealservices.addcom(company);
+          request.setAttribute("result",result);
+        request.getRequestDispatcher("gsgl.jsp").forward(request,response);
+    }
 
 
+    //系统管理下的公司管理的删除公司信息
+    private void deletecompany(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int cid=Integer.valueOf(request.getParameter("cid"));
+        String caccount=request.getParameter("caccount");
+        String canme=request.getParameter("canme");
+        Company company=new Company(cid,caccount,canme);
+          boolean result=dealservices.deletecompany(company);
+        request.setAttribute("result",result);
+        request.getRequestDispatcher("gsgl.jsp").forward(request,response);
     }
 
     //系统管理下的公司管理的修改公司信息
@@ -48,7 +83,6 @@ public class companyAdmin extends HttpServlet {
         String caccount=request.getParameter("caccount");
         String canme=request.getParameter("canme");
         Company company=new Company(cid,caccount,canme);
-        int pageNow=Integer.valueOf(request.getParameter("pageNow"));
         boolean modconpanyname = dealservices.modconpanyname(company);
 
 

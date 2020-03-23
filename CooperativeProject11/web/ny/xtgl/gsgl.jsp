@@ -85,7 +85,6 @@ function doDBClick(url,operator,type) {
       &nbsp;名称：
       <input type="text" name="canme" maxlength="20"  size="12" value="" class="input"><br>
       &nbsp; &nbsp; &nbsp; <input type="submit" name="searchbtn" value="查  询" class="button_new">
-      &nbsp; &nbsp; &nbsp; <input type="button" name="searchbtn2" value="新  增" class="button_new"onClick="javascript:location.href='gsgl_xz.htm'" >
       <input type="hidden" name="mod" value="no">
       &nbsp;&nbsp; </td>
   </tr>
@@ -94,6 +93,28 @@ function doDBClick(url,operator,type) {
 
 </table>
 </form>
+
+
+<form action="${pageContext.request.contextPath}/ny/xtgl/companyAdmin" method="post">
+    <input type="hidden" name="reqType" value="addxinxi">
+    <table width="96%" height="30" border="0" align="center" cellpadding="0" cellspacing="0" class="MENU_line">
+        <tr>
+            <td width="67%" align="left" class="text"  nowrap>
+                &nbsp;编号：
+                <input type="text" name="cid" maxlength="20"  size="12" value="" class="input"><br>
+                &nbsp;帐号：
+                <input type="text" name="caccount" maxlength="20"  size="12" value="" class="input"><br>
+                &nbsp;名称：
+                <input type="text" name="canme" maxlength="20"  size="12" value="" class="input"><br>
+                &nbsp; &nbsp; &nbsp; <input type="submit" name="searchbtn2" value="新  增" class="button_new"onClick="javascript:location.href='gsgl_xz.htm'" >
+                <input type="hidden" name="mod" value="no">
+                &nbsp;&nbsp; </td>
+        </tr>
+    </table>
+</form>
+
+
+
 </body>
 <script>
     function gotoPage() {
