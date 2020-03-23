@@ -35,5 +35,7 @@
         </tr>
     </c:forEach>
 </table>
+<input type="button" name="searchbtn3" value="返回" class="button_new"
+       onClick="javascript:history.back();">
 </body>
 </html>

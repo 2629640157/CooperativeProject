@@ -58,13 +58,13 @@
 <table width="96%" height="30" border="0" align="center" cellpadding="0" cellspacing="0" class="MENU_line">
     <tr>
         <td width="67%" align="right" class="text" nowrap>&nbsp;公司名称：
-            <input type="text" name="cname" maxlength="20" size="12" value="" class="input">
+            <input type="text" name="cname" maxlength="20" size="12" value="${cname}" class="input">
             &nbsp;&nbsp;&nbsp;&nbsp;公司帐号：
-            <input type="text" name="name" maxlength="20" size="12" value="" class="input">
+            <input type="text" name="name" maxlength="20" size="12" value="${name}" class="input">
             &nbsp;&nbsp;&nbsp;&nbsp;日期：
-            <input type="text" name="start" maxlength="20" size="12"  class="input">
+            <input type="text" name="start" maxlength="20" size="12" value="${start}" class="input">
             到
-            <input type="text" name="end" maxlength="20" size="12"  class="input"> &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="end" maxlength="20" size="12"  value="${end}" class="input"> &nbsp;&nbsp;&nbsp;&nbsp;
             <input type="submit" name="searchbtn" value="查  询" class="button_new">
             &nbsp;&nbsp; </td>
     </tr>

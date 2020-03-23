@@ -1,9 +1,9 @@
- 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 <title></title>
-<link href="../css/index.css" rel="stylesheet" type="text/css">
+<link href="../css/INDEX.css" rel="stylesheet" type="text/css">
 <script language="javascript">
 		function doTreeMenuFrameHandle(){
 			var treeFrame = window.parent.frames["mainFrameSet"];
@@ -13,12 +13,12 @@
 				treeFrame.cols = "190,*";
 				switchPoint.innerHTML="<img src='../image/arrow.jpg' >"
 				document.all("frmTitle").style.display=""
-				imgSrc.title = "隐藏菜单";
+				imgSrc.title = "闅愯棌鑿滃崟";
 			}else{
 				treeFrame.cols = "10,*";
 				switchPoint.innerHTML="<img src='../image/arrow_2.jpg' >"
 				document.all("frmTitle").style.display="none"
-				imgSrc.title = "显示菜单";
+				imgSrc.title = "鏄剧ず鑿滃崟";
 			}			
 		}
 </script>
@@ -45,7 +45,7 @@ body {
     <TD width="180" align=middle vAlign=top noWrap id=frmTitle>
     <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td width="180" valign="top" bgcolor="#efefef"><iframe src="left_1b.htm" name="left" width="180" marginwidth="0" height="100%" marginheight="0" align="top" scrolling="no" frameborder="0"></iframe></td>
+        <td width="180" valign="top" bgcolor="#efefef"><iframe src="left_1b.jsp" name="left" width="180" marginwidth="0" height="100%" marginheight="0" align="top" scrolling="no" frameborder="0"></iframe></td>
       </tr>
     </table>
     </TD>
@@ -71,7 +71,7 @@ else{
                 <BR>
                 <BR>
                 <BR>
-<SPAN class=navPoint style="font-size: 9pt;" id=switchPoint title="关闭/打开左栏"><img src="../image/arrow.jpg" width="7" height="48" id="aaa"></SPAN><br>
+<SPAN class=navPoint style="font-size: 9pt;" id=switchPoint title="鍏抽棴/鎵撳紑宸︽爮"><img src="../image/arrow.jpg" width="7" height="48" id="aaa"></SPAN><br>
 <BR>
                 <BR>
                 <BR>

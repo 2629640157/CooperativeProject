@@ -1,5 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" import="java.util.*" pageEncoding="gbk"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
@@ -105,19 +105,19 @@ body {
 </style></head>
 
 <body >
-
 <table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0"  id="menutd">
+  <%--${pageContext.request.contextPath}/ny/cwgl/chaxungoods?pageNow=1&reqType=queryAll--%>
   <tr>
     <td  width="14"   class="Menu_OutTd"  id="menutd1">&nbsp;</td>
-	<td  width="70" nowrap id="menubar_4"   class="Menu_OutTd">|<a href="grxx_ss.htm" target="main"> 高级搜索</a></td>
-    <td  width="70" nowrap id="menubar_4"   class="Menu_OutTd">|<a href="grxx.htm" target="main"> 工人管理</a></td>
-  
+    <td  width="70" nowrap id="menubar_4"   class="Menu_OutTd">|<a href="${pageContext.request.contextPath}/ny/cwgl/chaxungoods?pageNow=1&reqType=queryAll" target="main"> 收费管理</a></td>
+    <td  width="70" nowrap id="menubar_5"   class="Menu_OutTd">|<a href="${pageContext.request.contextPath}/ny/cwgl/consume?pageNow=1&reqType=AllConsume" target="main"> 消费管理</a></td>
     <td width="676"  nowrap align="right" class="Menu_OutTd"  >&nbsp;</td>
   </tr>
 </table>
 </body>
 </html>
+
+
 <script>
       document.links[0].click();
       </script>
-

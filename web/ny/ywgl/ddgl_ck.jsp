@@ -150,7 +150,7 @@
 <table width="96%" height="63" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
         <td width="67%" height="63" align="center" nowrap class="text">
-            <input type="submit" name="searchbtn3"value="返  回" class="button_new" onClick="javascript:location.href='${pageContext.request.contextPath}/ny/ywgl/deal?type=queryWorkers&pageNow=${pageNow}'">
+            <input type="submit" name="searchbtn3"value="返  回" class="button_new" onClick="javascript:history.back();">
             <input type="hidden" name="pageNow" value="${pageNow}">
             &nbsp;&nbsp;
         </td>

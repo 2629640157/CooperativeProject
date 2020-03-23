@@ -57,18 +57,18 @@
 <table width="96%" height="30" border="0" align="center" cellpadding="0" cellspacing="0" class="MENU_line">
     <tr>
         <td width="67%" align="right" class="text" nowrap>&nbsp; 雇主：
-            <input type="text" name="ename" maxlength="20" size="12" value="" class="input">
+            <input type="text" name="ename" maxlength="20" size="12" value="${ename}" class="input">
             &nbsp;  登记日期：
-            <input type="text" name="start" maxlength="20" size="12" value="" class="input">
+            <input type="text" name="start" maxlength="20" size="12" value="${start}" class="input">
             到
-            <input type="text" name="end" maxlength="20" size="12" value="" class="input">
+            <input type="text" name="end" maxlength="20" size="12" value="${end}" class="input">
             &nbsp; 雇用工人：
-            <input type="text" name="wname" maxlength="20" size="12" value="" class="input">
+            <input type="text" name="wname" maxlength="20" size="12" value="${wname}" class="input">
             &nbsp;状态：
             <select name="status" id="select" class="input">
                 <option selected>请选择</option>
-                <option>未雇佣</option>
-                <option>雇佣</option>
+                <option value="未雇佣" <c:if test="${'未雇佣' eq status}">selected</c:if>>未雇佣</option>
+                <option  value="雇佣" <c:if test="${'雇佣' eq status}">selected</c:if>>雇佣</option>
             </select>
             <input type="submit" name="searchbtn" value="查询" class="button_new">
             <input type="button" name="searchbtn2" value="新增" class="button_new"

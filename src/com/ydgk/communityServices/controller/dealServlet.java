@@ -257,6 +257,7 @@ public class dealServlet extends HttpServlet {
         request.setAttribute("page", page);
         request.setAttribute("start", start);
         request.setAttribute("end", end);
+        request.setAttribute("status", status);
         try {
             request.getRequestDispatcher("ddgl.jsp").forward(request, response);
             //response.sendRedirect("gzxx.jsp");
@@ -289,7 +290,6 @@ public class dealServlet extends HttpServlet {
         int totalCount = dealServices.dealCounts(deal);
         Page page = new Page(1, pageNow, totalCount);
         List<Deal> dealList = dealServices.queryDeals(deal, page);
-
         //HttpSession session = request.getSession();
         request.setAttribute("dealList", dealList);
         request.setAttribute("deal", deal);

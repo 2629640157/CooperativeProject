@@ -1,5 +1,6 @@
 package com.ydgk.communityServices.controller;
 
+import com.ydgk.communityServices.entity.Message;
 import com.ydgk.communityServices.entity.Status;
 import com.ydgk.communityServices.services.Impl.statusServicesImpl;
 import com.ydgk.communityServices.services.statusServices;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,11 +41,22 @@ public class statusServlet extends HttpServlet {
 
     //添加处理
     private void addStatus(HttpServletRequest request, HttpServletResponse response) {
-        request.getParameter("subject");
-        request.getParameter("content");
-        request.getParameter("sender");
-        request.getParameter("");
-        request.getParameter("");
+        String subject = request.getParameter("subject");
+        String content = request.getParameter("content");
+        Date date = new Date();
+        Message message = new Message(subject, content, date);
+        String senderStr = request.getParameter("sender");
+        Integer sender = Integer.valueOf(senderStr);
+        Status status = new Status(sender, 0, message);
+        boolean b = statusServices.addStatus(status);
+        if (b){
+            System.out.println("发送成功");
+            queryStatus(request, response);
+        }else {
+            System.out.println("发送失败");
+        }
+
+
     }
 
     //跳转到添加页面
@@ -78,10 +91,11 @@ public class statusServlet extends HttpServlet {
         //List<Integer> senderList = statusServices.querySenders();
         request.setAttribute("statusList", statusList);
         request.setAttribute("page", page);
-        //request.setAttribute("senderList", senderList);
+        request.setAttribute("sender", sender);
+        request.setAttribute("state", state);
+
         try {
             request.getRequestDispatcher("message_list.jsp").forward(request, response);
-            //response.sendRedirect("gzxx.jsp");
         } catch (Exception e) {
             e.printStackTrace();
         }
